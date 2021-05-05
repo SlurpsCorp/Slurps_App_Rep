@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Accueil" >
+
+<!--    background girl net-->
+    <ImageView
+        android:id="@+id/imageBgGirlNet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/netbgaccueil" />
+
+<!--    White circle logo-->
+
+    <ImageView
+        android:id="@+id/imageCircleAccueil"
+        android:layout_width="214dp"
+        android:layout_height="222dp"
+        android:alpha="0.9"
+        android:foregroundGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/imageBgGirlNet"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.622"
+        app:srcCompat="@drawable/circle" />
+
+<!--    Text "Slurps" logo-->
+    <TextView
+        android:id="@+id/textSlurps"
+        android:layout_width="205dp"
+        android:layout_height="132dp"
+        android:fontFamily="@font/brusher"
+        android:gravity="center"
+        android:rotation="340"
+        android:text="Slurps"
+        android:textColor="#000000"
+        android:textSize="80sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageCircleAccueil"
+        app:layout_constraintEnd_toEndOf="@+id/imageCircleAccueil"
+        app:layout_constraintStart_toStartOf="@+id/imageCircleAccueil"
+        app:layout_constraintTop_toTopOf="@+id/imageCircleAccueil" />
+
+<!--    Text "S'inscrire"-->
+    <TextView
+        android:id="@+id/textConnexionAccueil"
+        android:layout_width="360dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/helveticabold"
+        android:gravity="center"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:text="Se connecter"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FAFAFA"
+        android:textSize="55sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageCircleAccueil"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/version"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    Text "se connecter"-->
+
+    <TextView
+        android:id="@+id/textRegisterAccueil"
+        android:layout_width="210dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/helvetica"
+        android:gravity="center|top"
+        android:shadowColor="#000000"
+        android:shadowRadius="5"
+        android:text="S'enregistrer"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textConnexionAccueil"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

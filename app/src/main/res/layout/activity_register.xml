@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignIn">
+
+
+    <!-- cellule e-mail -->
+
+
+    <!--    cellule password  -->
+    <ImageView
+        android:id="@+id/imageBgGirlNet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/floubgaccueil" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:backgroundTintMode="add"
+        android:ems="10"
+        android:foregroundTint="@color/white"
+        android:hint="Adresse e-mail"
+        android:inputType="textEmailAddress"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:singleLine="false"
+        android:textAppearance="@style/loginField"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/imageBgGirlNet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.454"
+        tools:ignore="MissingConstraints" />
+
+    <!--    button register  -->
+    <EditText
+        android:id="@+id/editTextPasswords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:backgroundTintMode="add"
+        android:ems="10"
+        android:foregroundTint="@color/white"
+        android:hint="Mot de passe"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="false"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:singleLine="false"
+        android:textAppearance="@style/loginField"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageBgGirlNet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+        app:layout_constraintVertical_bias="0.084"
+        tools:ignore="MissingConstraints" />
+
+
+    <!--    text "Register"   -->
+
+
+    <!--  circle logo  -->
+
+
+    <EditText
+        android:id="@+id/editTextPasswords2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:backgroundTintMode="add"
+        android:ems="10"
+        android:foregroundTint="@color/white"
+        android:hint="Confirmation mdp"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="false"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:singleLine="false"
+        android:textAppearance="@style/loginField"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/white"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageBgGirlNet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+        app:layout_constraintVertical_bias="0.318"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="155dp"
+        android:layout_height="69dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="S'enregistrer"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswords"
+        app:layout_constraintVertical_bias="0.625"
+        app:rippleColor="#000000"
+        app:strokeColor="#7C3A3A"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Incription"
+        android:layout_width="363dp"
+        android:layout_height="107dp"
+        android:fontFamily="@font/brusher"
+        android:gravity="center"
+        android:shadowColor="@color/black"
+        android:shadowRadius="10"
+        android:text="Register"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FAFAFA"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageBgGirlNet"
+        app:layout_constraintVertical_bias="0.881" />
+
+    <ImageView
+        android:id="@+id/imageCircle"
+        android:layout_width="122dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle" />
+
+<!--    "slurps" logo   -->
+    <TextView
+        android:id="@+id/textSlurps"
+        android:layout_width="120dp"
+        android:layout_height="82dp"
+        android:fontFamily="@font/brusher"
+        android:gravity="center"
+        android:rotation="340"
+        android:text="Slurps"
+        android:textColor="#000000"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageCircle"
+        app:layout_constraintEnd_toEndOf="@+id/imageCircle"
+        app:layout_constraintStart_toStartOf="@+id/imageCircle"
+        app:layout_constraintTop_toTopOf="@+id/imageCircle" />
+
+<!--    Progress Bar-->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageBgGirlNet"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
