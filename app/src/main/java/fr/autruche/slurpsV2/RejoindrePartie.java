@@ -105,7 +105,7 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
             });
 
         }else{
-            Toast.makeText(RejoindrePartie.this,"😢 La partie a commencé sans vous! ",Toast.LENGTH_LONG).show();
+            Toast.makeText(RejoindrePartie.this,"😢 💩La partie a commencé sans vous! ",Toast.LENGTH_LONG).show();
         }
     }
 

@@ -15,7 +15,7 @@ public class Partie {
     private int minutePartie = 0;
     private String createurID;
     private ArrayList joueurIDlist;
-    private boolean accessible= true;;
+    private boolean isAccessible= true;;
 
     public Partie(){}
 
@@ -35,7 +35,7 @@ public class Partie {
     }
 
     public boolean isAccessible() {
-        return accessible;
+        return isAccessible;
     }
     public String getCodePartie(){
         return codePartie;
