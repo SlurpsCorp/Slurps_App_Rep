@@ -1,8 +1,12 @@
 package fr.autruche.slurpsV2;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -15,15 +19,26 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class CreationPartie extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseDatabase mDatabase;
+    private FirebaseAuth mAuth;
 
+    private ArrayList<String> userPlayingList  = new ArrayList();
     private TextView code1, code2, code3, code4;
     private String codePartie,createurID ;
     private NumberPicker timePickerHour, timePickerMinute;
@@ -40,6 +55,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_creation_partie);
 
         mDatabase = FirebaseDatabase.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         timePickerHour = (NumberPicker) findViewById(R.id.timePickerHour);
         timePickerHour.setMinValue(0);
@@ -93,7 +109,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         if(TimePickerMinute != 0 || TimePickerHour != 0 ){
             FirebaseDatabase.getInstance().getReference("parties/"+ codePartie + "/heurePartie").setValue(TimePickerHour);
             FirebaseDatabase.getInstance().getReference("parties/" + codePartie + "/minutePartie").setValue(TimePickerMinute);
-            FirebaseDatabase.getInstance().getReference("parties/" + codePartie + "/accessible").setValue(false);
+            FirebaseDatabase.getInstance().getReference("parties/" + codePartie + "/isAccessible").setValue(false);
             Toast.makeText(CreationPartie.this,"⚠️ Partie lancée et injoignable !",Toast.LENGTH_LONG).show();
             return;
         }else{
@@ -178,5 +194,61 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         waitUser.setAdjustViewBounds(true);
         waitUser.setMaxHeight(cote);
         waitUser.setMaxWidth(cote);
+    }
+
+    public void setCloudImageView(String userId){
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference pdpRef = storage.getReference().child(mAuth.getCurrentUser().getUid() + "png");
+        pdpRef.getBytes(1024*1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+            @Override
+            public void onSuccess(byte[] bytes) {
+                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0 , bytes.length);
+                //imageview.setImageBitmap(bitmap);
+            }
+        });
+    }
+
+    public void getUserPlaying(String partieID){
+
+                    DatabaseReference refListJoueur = (DatabaseReference) mDatabase.getReference().child("partie").child(partieID).child("joueurIDlist").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                try{
+                    userPlayingList = snapshot.getValue(ArrayList.class);
+                } catch (Throwable e) {
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                try{
+                    userPlayingList  = snapshot.getValue(ArrayList.class);
+                } catch (Throwable e) {
+                }
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                try{
+                    userPlayingList  = snapshot.getValue(ArrayList.class);
+                } catch (Throwable e) {
+                }
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                try{
+                    userPlayingList  = snapshot.getValue(ArrayList.class);
+                } catch (Throwable e) {
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        int lo = userPlayingList.size();
+        Toast.makeText(CreationPartie.this,"❌ Une erreur est survenue! Veuillez réessayer!register",Toast.LENGTH_LONG).show();
     }
 }
