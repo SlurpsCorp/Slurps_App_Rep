@@ -1,10 +1,5 @@
 package fr.autruche.slurpsV2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Partie {
@@ -15,7 +10,7 @@ public class Partie {
     private int minutePartie = 0;
     private String createurID;
     private ArrayList joueurIDlist;
-    private boolean isAccessible= true;;
+    private boolean acces = true;
 
     public Partie(){}
 
@@ -34,8 +29,8 @@ public class Partie {
         this.minutePartie = minutePartie;
     }
 
-    public boolean isAccessible() {
-        return isAccessible;
+    public boolean isAcces() {
+        return acces;
     }
     public String getCodePartie(){
         return codePartie;

@@ -1,7 +1,6 @@
 package fr.autruche.slurpsV2;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -15,7 +14,6 @@ import android.widget.EditText;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
-import android.widget.NumberPicker;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,10 +21,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
@@ -44,7 +40,7 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
     private ImageView waitUser;
     private ProgressBar progressBar;
     private int cote;
-    private boolean accessible;
+    private boolean acces;
 
     private TextView textaaa;
 
@@ -146,21 +142,22 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
 
     private boolean isAccessible(String code){
 
-        mDatabase.getReference().child("parties").child(code).child("isAccessible").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        mDatabase.getReference().child("parties").child(code).child("acces").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
                     Log.e("firebase", "Error getting data", task.getException());
-                    accessible = false;
+                    acces = false;
                     Toast.makeText(RejoindrePartie.this,"❌ Partie introuvable! ",Toast.LENGTH_LONG).show();
                 }else {
                    if (task.getResult().getValue() == "true"){
-                       accessible = true;
-                   }else{accessible = false;}
+                       acces = true;
+                   }else{
+                       acces = false;}
                 }
             }
         });
-        return accessible;
+        return acces;
     }
 
     public class PinTextWatcher implements TextWatcher {
