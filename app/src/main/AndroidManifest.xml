@@ -22,7 +22,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Slurps">
-        <activity android:name=".RejoindrePartie"></activity>
+        <activity android:name=".AlexGrid"></activity>
+        <activity android:name=".RejoindrePartie" />
         <activity android:name=".JoinOrCreate" />
         <activity android:name=".CreationPartie" />
         <activity android:name=".Photo" />

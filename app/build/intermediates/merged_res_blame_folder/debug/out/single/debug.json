@@ -124,6 +124,10 @@
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_alex_grid.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_alex_grid.xml"
+    },
+    {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_rectangletitrecode.png.flat",
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/rectangletitrecode.png"
     },

@@ -1927,6 +1927,8 @@ id code3
 id code4
 id collapseActionView
 id confirm_button
+id constraint
+id constraint2
 id container
 id content
 id contentPanel
@@ -1984,6 +1986,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id firstConstraint
 id fitToContents
 id fixed
 id flCercle
@@ -2153,6 +2156,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id scrolly
 id search_badge
 id search_bar
 id search_button
@@ -2330,6 +2334,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_accueil
+layout activity_alex_grid
 layout activity_creation_partie
 layout activity_join_or_create
 layout activity_passwd_forgot
