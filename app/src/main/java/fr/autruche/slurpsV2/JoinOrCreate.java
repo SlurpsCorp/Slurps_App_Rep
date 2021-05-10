@@ -35,7 +35,7 @@ public class JoinOrCreate extends AppCompatActivity implements View.OnClickListe
     private TextView playTextView, creerTextView;
     private ImageView profilImage;
     private String date;
-
+    Date calendar2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,20 +45,19 @@ public class JoinOrCreate extends AppCompatActivity implements View.OnClickListe
         mDatabase = FirebaseDatabase.getInstance();
 
 
-        Date d = new Date();
-        SimpleDateFormat f = new SimpleDateFormat("yyyyMMdd'T'HHmmss");
-        date = f.format(d);
 
-        DatabaseReference ref = mDatabase.getReference().child("parties");
-/*
+        long date = calendar2.getTime();
+        //Toast.makeText(this,  Long.toString(date), Toast.LENGTH_SHORT).show();
+        /*DatabaseReference ref = mDatabase.getReference().child("parties");
+
         ref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                String dateSnap = snapshot.child("date").getValue(String.class);
+                long dateSnap = snapshot.child("date").getValue(long.class);
                 String id = snapshot.child("codePartie").getValue(String.class);
 
                 try {
-                    if ( Integer.parseInt(dateSnap.substring(0,4)) <  Integer.parseInt(date.substring(0, 4))){
+                    if ( date - dateSnap >= ){
                         mDatabase.getReference().child("parties").child(id).setValue(null);
                         //delete partie
                     }else{

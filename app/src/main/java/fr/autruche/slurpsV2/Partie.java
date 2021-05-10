@@ -15,10 +15,9 @@ public class Partie {
     private boolean acces = true;
 
 
-    Date d = new Date();
-    SimpleDateFormat f = new SimpleDateFormat("yyyyMMdd'T'HHmmss");
-    String s = f.format(d);
-    private Date date = d;
+    Date calendar1;
+    private long date = calendar1.getTime();
+    
 
     public Partie(){}
 
@@ -55,7 +54,7 @@ public class Partie {
     public ArrayList getJoueurIDlist() {
         return joueurIDlist;
     }
-    public Date getDate() {
+    public long getDate() {
         return date;
     }
 }
