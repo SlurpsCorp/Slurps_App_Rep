@@ -39,7 +39,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     private EditText editTextEmail, editTextPassword, editTextPasswords2;
     private Button buttonRegister;
     private ProgressBar progressBar;
-
+    private String pseudoDefault;
 
 
     @Override
@@ -74,6 +74,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         String email = editTextEmail.getText().toString().trim();
         String passwd = editTextPassword.getText().toString().trim();
         String passwd2 = editTextPasswords2.getText().toString().trim();
+        String pseudo = retrievePseudo();
 
         if(email.isEmpty()){
             editTextEmail.setError("⚠️ Email obligatoire!");
@@ -107,37 +108,62 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
 
         progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email,passwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                         if(task.isSuccessful()){
-                             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                             User user = new User(email);
-                             mDatabase.child(mAuth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                 @Override
-                                 public void onComplete(@NonNull Task<Void> task) {
-                                     if(task.isSuccessful()){
+                    User user = new User(pseudo, email);
+                    mDatabase.child(mAuth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
 
-                                         //////////////////redirect play view /////////////////////
-                                         Intent openPlay = new Intent(getApplicationContext(), SignIn.class);
-                                         progressBar.setVisibility(View.GONE);
-                                         startActivity(openPlay);
-                                         finish();
+                                //////////////////redirect play view /////////////////////
+                                Intent openPlay = new Intent(getApplicationContext(), SignIn.class);
+                                progressBar.setVisibility(View.GONE);
+                                startActivity(openPlay);
+                                finish();
 
 
-                                     }else{
-                                         Toast.makeText(Register.this,"❌ Une erreur est survenue! Veuillez réessayer!ecrire database",Toast.LENGTH_LONG).show();
-                                         progressBar.setVisibility(View.GONE);
-                                     }
+                            }else{
+                                Toast.makeText(Register.this,"❌ Une erreur est survenue! Veuillez réessayer!ecrire database",Toast.LENGTH_LONG).show();
+                                progressBar.setVisibility(View.GONE);
+                            }
 
-                                 }
-                             });
-                             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                         }else{
-                             Toast.makeText(Register.this,"❌ Une erreur est survenue! Veuillez réessayer!register",Toast.LENGTH_LONG).show();
-                             progressBar.setVisibility(View.GONE);
-                         }
-                    }
-                });
+                        }
+                    });
+                    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                }else{
+                    Toast.makeText(Register.this,"❌ Une erreur est survenue! Veuillez réessayer!register",Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+                }
+            }
+        });
+
+    }
+
+    public String retrievePseudo(){
+
+        Random rand = new Random();
+        String pseudoNum = String.valueOf(rand.nextInt(478) + 1);
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("pseudoDefault");
+        ref.child(pseudoNum).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                    //Toast.makeText(Register.this,"❌AIE PAS DE PSEUDO",Toast.LENGTH_LONG).show();
+                    pseudoDefault = "Crasseux";
+                    Toast.makeText(Register.this,"Pseudo: " + pseudoDefault,Toast.LENGTH_LONG).show();
+                }else {
+                    pseudoDefault = String.valueOf(task.getResult().getValue());
+                    Toast.makeText(Register.this,"Pseudo: " + pseudoDefault,Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        return pseudoDefault;
     }
 }
