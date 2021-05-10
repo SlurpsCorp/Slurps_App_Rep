@@ -1,6 +1,8 @@
 package fr.autruche.slurpsV2;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Partie {
 
@@ -11,6 +13,12 @@ public class Partie {
     private String createurID;
     private ArrayList joueurIDlist;
     private boolean acces = true;
+
+
+    Date d = new Date();
+    SimpleDateFormat f = new SimpleDateFormat("yyyyMMdd'T'HHmmss");
+    String s = f.format(d);
+    private Date date = d;
 
     public Partie(){}
 
@@ -46,5 +54,8 @@ public class Partie {
     }
     public ArrayList getJoueurIDlist() {
         return joueurIDlist;
+    }
+    public Date getDate() {
+        return date;
     }
 }

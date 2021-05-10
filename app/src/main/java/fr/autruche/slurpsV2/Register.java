@@ -35,7 +35,7 @@ import java.util.concurrent.TimeUnit;
 public class Register extends AppCompatActivity implements View.OnClickListener{
 
     private FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
+    private FirebaseDatabase mDatabase;
     private EditText editTextEmail, editTextPassword, editTextPasswords2;
     private Button buttonRegister;
     private ProgressBar progressBar;
@@ -48,7 +48,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_register);
 
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference("Users");
+        mDatabase = FirebaseDatabase.getInstance();
 
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
 
@@ -114,7 +114,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
                     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                     User user = new User(pseudoDefault, email);
-                    mDatabase.child(mAuth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    mDatabase.getReference("Users").child(mAuth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
@@ -147,7 +147,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         Random rand = new Random();
         String pseudoNum = String.valueOf(rand.nextInt(478) + 1);
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("pseudoDefault");
+        DatabaseReference ref = mDatabase.getReference().child("pseudoDefault");
         ref.child(pseudoNum).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {

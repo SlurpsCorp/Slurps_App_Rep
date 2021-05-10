@@ -1,4 +1,4 @@
-#Mon May 10 19:58:35 CEST 2021
+#Mon May 10 22:47:27 CEST 2021
 base.0=/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -59,7 +59,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
 
         timePickerHour = (NumberPicker) findViewById(R.id.timePickerHour);
         timePickerHour.setMinValue(0);
-        timePickerHour.setMaxValue(10);
+        timePickerHour.setMaxValue(4);
 
         timePickerMinute = (NumberPicker) findViewById(R.id.timePickerMin);
         timePickerMinute.setMinValue(0);
