@@ -74,7 +74,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         String email = editTextEmail.getText().toString().trim();
         String passwd = editTextPassword.getText().toString().trim();
         String passwd2 = editTextPasswords2.getText().toString().trim();
-        String pseudo = retrievePseudo();
+        retrievePseudo();
 
         if(email.isEmpty()){
             editTextEmail.setError("⚠️ Email obligatoire!");
@@ -113,7 +113,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
                 if(task.isSuccessful()){
                     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                    User user = new User(pseudo, email);
+                    User user = new User(pseudoDefault, email);
                     mDatabase.child(mAuth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -130,7 +130,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
                                 Toast.makeText(Register.this,"❌ Une erreur est survenue! Veuillez réessayer!ecrire database",Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
                             }
-
                         }
                     });
                     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -143,7 +142,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
 
     }
 
-    public String retrievePseudo(){
+    public void retrievePseudo(){
 
         Random rand = new Random();
         String pseudoNum = String.valueOf(rand.nextInt(478) + 1);
@@ -154,16 +153,13 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
                     Log.e("firebase", "Error getting data", task.getException());
-                    //Toast.makeText(Register.this,"❌AIE PAS DE PSEUDO",Toast.LENGTH_LONG).show();
                     pseudoDefault = "Crasseux";
-                    Toast.makeText(Register.this,"Pseudo: " + pseudoDefault,Toast.LENGTH_LONG).show();
+                    //Toast.makeText(Register.this,"Pseudo: " + pseudoDefault,Toast.LENGTH_LONG).show();
                 }else {
                     pseudoDefault = String.valueOf(task.getResult().getValue());
-                    Toast.makeText(Register.this,"Pseudo: " + pseudoDefault,Toast.LENGTH_LONG).show();
+                    Toast.makeText(Register.this,"Ton pseudo: " + pseudoDefault,Toast.LENGTH_LONG).show();
                 }
             }
         });
-
-        return pseudoDefault;
     }
 }
