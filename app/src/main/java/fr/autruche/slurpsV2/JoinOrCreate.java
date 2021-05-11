@@ -44,63 +44,7 @@ public class JoinOrCreate extends AppCompatActivity implements View.OnClickListe
 
         mDatabase = FirebaseDatabase.getInstance();
 
-
-
-        long date = calendar2.getTime();
-        //Toast.makeText(this,  Long.toString(date), Toast.LENGTH_SHORT).show();
-        /*DatabaseReference ref = mDatabase.getReference().child("parties");
-
-        ref.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                long dateSnap = snapshot.child("date").getValue(long.class);
-                String id = snapshot.child("codePartie").getValue(String.class);
-
-                try {
-                    if ( date - dateSnap >= ){
-                        mDatabase.getReference().child("parties").child(id).setValue(null);
-                        //delete partie
-                    }else{
-                        if ( Integer.parseInt(dateSnap.substring(4, 6)) <  Integer.parseInt(date.substring(4, 6))){
-                            mDatabase.getReference().child("parties").child(id).setValue(null);
-                            //delete partie
-                        }else{
-                            if ( Integer.parseInt(dateSnap.substring(6, 8)) <  Integer.parseInt(date.substring(6, 8))){
-                                if ( Integer.parseInt(date.substring(10, 11)) - Integer.parseInt(dateSnap.substring(9, 11))  > 5 ){
-                                    mDatabase.getReference().child("parties").child(id).setValue(null);
-                                    //delete partie
-                                }
-                                mDatabase.getReference().child("parties").child(id).setValue(null);
-                                //delete partie
-                            }
-                        }
-                    }
-
-                }catch (Exception e){
-                }
-
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });*/
+        deleteOldPartie();
 
         playTextView = (TextView) findViewById(R.id.RejoindreTextView);
         playTextView.setOnClickListener(this);
@@ -183,18 +127,48 @@ public class JoinOrCreate extends AppCompatActivity implements View.OnClickListe
     public boolean deleteOldPartie(){
 
         Date d = new Date();
-        SimpleDateFormat f = new SimpleDateFormat("yyyyMMdd'T'HHmmss");
+        SimpleDateFormat f = new SimpleDateFormat("yyyyMMddHHmmss");
         date = f.format(d);
+
+        int annee_actu = Integer.parseInt(date.substring(0,4));
+        int mois_actu = Integer.parseInt(date.substring(4, 6));
+        int jour_actu = Integer.parseInt(date.substring(6, 8));
+        int heure_actu = Integer.parseInt(date.substring(8, 10));
+
 
         DatabaseReference ref = mDatabase.getReference().child("parties");
 
         ref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                String okey = snapshot.child("date").getValue(String.class);
+                String date_creation = snapshot.child("date").getValue(String.class);
+                String id = snapshot.child("codePartie").getValue(String.class);
 
+                int annee_crea = Integer.parseInt(date_creation.substring(0,4));
+                int mois_crea = Integer.parseInt(date_creation.substring(4, 6));
+                int jour_crea = Integer.parseInt(date_creation.substring(6, 8));
+                int heure_crea = Integer.parseInt(date_creation.substring(8, 10));
+                int min_crea = Integer.parseInt(date_creation.substring(10, 12));
+                int sec_crea = Integer.parseInt(date_creation.substring(12, 14));
+                try {
+                    if (annee_crea != annee_actu){
+                        mDatabase.getReference().child("parties").child(id).setValue(null);
+                    }else{
+                        if (mois_crea != mois_actu){
+                            mDatabase.getReference().child("parties").child(id).setValue(null);
+                        }else{
+                            if ( jour_actu - jour_crea > 1 ){
+                                mDatabase.getReference().child("parties").child(id).setValue(null);
 
-                mDatabase.getReference().child("mamout").setValue(okey);
+                            }else{
+                                if((jour_actu - jour_crea == 1) && ( heure_crea < heure_actu )) {
+                                    mDatabase.getReference().child("parties").child(id).setValue(null);
+                                }
+                            }
+                        }
+                    }
+                }catch (Exception e){
+                }
 
             }
 
