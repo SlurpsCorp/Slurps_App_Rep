@@ -44,9 +44,12 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
     private NumberPicker timePickerHour, timePickerMinute;
     private Button buttonValider;
     private GridLayout gridUser;
+    private FrameLayout frameImg;
     private ImageView waitUser;
     private ProgressBar progressBar;
     private int cote;
+    private int increment = 0;
+
 
 
     @Override
@@ -73,12 +76,17 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         progressBar = (ProgressBar) findViewById(R.id.progressBar2);
         progressBar.setVisibility(View.VISIBLE);
 
+        frameImg = findViewById(R.id.frameLayout1);
+        gridUser = findViewById(R.id.GridLayout);
+        waitUser = findViewById(R.id.waitUser);
 
         codePartie();
 
         waitUserIcon();
 
         writePartieOnFirebase();
+
+        getUserPlaying();
 
     }
     protected void onStop(){
@@ -124,31 +132,41 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         mDatabase.getReference("parties/" + codePartie).setValue(partie);
     }
 
-    public void setImageView() {
+    public void setImagePlayer(Bitmap bitmap, String idImage) {
 
         //creation FrameLayout
         FrameLayout fm = new FrameLayout(gridUser.getContext());
-        int p = 40;
+        fm.setTag(idImage);
+        int p = 60;
         fm.setPadding(p, p, p, p);
-        //FrameLayout.LayoutParams params =(FrameLayout.LayoutParams) fm.getLayoutParams();
-        //params.setMargins(15,15,15,15);
-        //fm.setLayoutParams(params);
 
         //creation Cardview
         CardView cd = new CardView(fm.getContext());
         cd.setRadius(500);
-        //cd.setPadding(15,15,15,15);
 
         // chemin image
         ImageView v = new ImageView(cd.getContext());
-        //v.setImageResource(getResources().getDrawable());
+
+        //rognage bitmap
+        int value = 0;
+        Bitmap finalBitmap=null;
+        if (bitmap.getHeight() <= bitmap.getWidth()) {
+            value = bitmap.getHeight();
+            finalBitmap = Bitmap.createBitmap(bitmap,(bitmap.getWidth()-value)/2 , 0, value, value);
+        } else {
+            value = bitmap.getWidth();
+            finalBitmap = Bitmap.createBitmap(bitmap,0 , (bitmap.getHeight()-value)/2, value, value);
+        }
+
+
+        v.setImageBitmap(finalBitmap);
         v.setAdjustViewBounds(true);
         v.setMaxHeight(cote);
         v.setMaxWidth(cote);
 
-        //v.setPadding(15,15,15,15);
         cd.addView(v);
         fm.addView(cd);
+        gridUser.addView(fm);
     }
 
 
@@ -182,32 +200,36 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
 
 
     private void waitUserIcon() {
-        gridUser = (GridLayout) findViewById(R.id.GridLayout);
 
-        waitUser = (ImageView)  findViewById(R.id.waitUser);
+
+        frameImg.setPadding(60, 60, 60, 60);
+
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         int px = metrics.widthPixels;
+        cote = px / 8;
 
-        cote = px / 5;
         waitUser.setAdjustViewBounds(true);
         waitUser.setMaxHeight(cote);
         waitUser.setMaxWidth(cote);
+
     }
+
 
     public void addImageprofil(String userId){
         FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference pdpRef = storage.getReference().child(mAuth.getCurrentUser().getUid() + "png");
+        StorageReference pdpRef = storage.getReference().child(userId + "png");
         pdpRef.getBytes(1024*1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
             @Override
             public void onSuccess(byte[] bytes) {
                 Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0 , bytes.length);
-                //imageview.setImageBitmap(bitmap);
+                //setImagePlayer(bitmap,userId);
+                Toast.makeText(CreationPartie.this, userId + "s'est connecté", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    public void deleteImageProfil(){
+    public void deleteImageProfil(String idPlayer){
 
     }
     public void getUserPlaying(){
@@ -230,7 +252,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
                 String idJoueur = snapshot.getValue(String.class);
-                deleteImageProfil();
+                deleteImageProfil(idJoueur);
             }
 
             @Override

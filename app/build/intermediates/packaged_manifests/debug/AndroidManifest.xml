@@ -31,6 +31,7 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.Slurps" >
         <activity android:name="fr.autruche.slurpsV2.AlexGrid" />
         <activity android:name="fr.autruche.slurpsV2.RejoindrePartie" />

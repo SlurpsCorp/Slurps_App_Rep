@@ -79,30 +79,22 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
         codePartie = code1.getText().toString().trim() + code2.getText().toString().trim() + code3.getText().toString().trim() + code4.getText().toString().trim();
 
 
-        if (isAccessible(codePartie) == true){
+        mDatabase.getReference().child("parties").child(codePartie).child("acces").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                acces = snapshot.getValue(boolean.class);
+                if (acces == true){
+                    Toast.makeText(RejoindrePartie.this, Boolean.toString(acces), Toast.LENGTH_SHORT).show();
+                    mDatabase.getReference("parties/" + codePartie + "joueurIDList").setValue(joueurIDlist);
 
-            joueurIDlist.add(1, joueurID);
-            mDatabase.getReference("parties/" + codePartie + "joueurIDList").setValue(joueurIDlist);
-            mDatabase.getReference("parties/" + codePartie).child("joueurIDList").addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                        joueurIDlist.add(snapshot.getValue().toString());
-                        textaaa.setText(textaaa + "\n" + snapshot.getValue().toString());
-
-                        // trouver chemain photo avec user et afficher pdp storage
-                    }
+                }else{
+                    Toast.makeText(RejoindrePartie.this,"😢 💩La partie a commencé sans vous! ",Toast.LENGTH_LONG).show();
                 }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    //Log.w("firebase", "loadPost:onCancelled", DatabaseError.toException());
-                }
-            });
-
-        }else{
-            Toast.makeText(RejoindrePartie.this,"😢 💩La partie a commencé sans vous! ",Toast.LENGTH_LONG).show();
-        }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
     }
 
     public void codePartie(){
@@ -121,9 +113,6 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
         code2.setOnKeyListener(new PinOnKeyListener(1));
         code3.setOnKeyListener(new PinOnKeyListener(2));
         code4.setOnKeyListener(new PinOnKeyListener(3));
-
-
-
     }
 
     private void waitUserIcon() {
@@ -140,25 +129,6 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
         waitUser.setMaxWidth(cote);
     }
 
-    private boolean isAccessible(String code){
-
-        mDatabase.getReference().child("parties").child(code).child("acces").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                    acces = false;
-                    Toast.makeText(RejoindrePartie.this,"❌ Partie introuvable! ",Toast.LENGTH_LONG).show();
-                }else {
-                   if (task.getResult().getValue() == "true"){
-                       acces = true;
-                   }else{
-                       acces = false;}
-                }
-            }
-        });
-        return acces;
-    }
 
     public class PinTextWatcher implements TextWatcher {
 
