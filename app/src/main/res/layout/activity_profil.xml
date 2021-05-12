@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/floubgprofil"
+    android:fadeScrollbars="false"
+    android:isScrollContainer="false"
+    android:overScrollMode="always"
+    android:scrollbarAlwaysDrawVerticalTrack="false"
+    android:visibility="visible"
+    tools:context=".Profil">
+
+    <EditText
+        android:id="@+id/pseudoEditText"
+        android:layout_width="260dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:fontFamily="@font/roboto_condensed_bold"
+        android:gravity="center"
+        android:hint="Ecris ton peudo ici"
+        android:inputType="textPersonName"
+        android:shadowColor="#000000"
+        android:text="Pseudo123"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="271dp"
+        android:layout_height="89dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pseudoEditText"
+        app:layout_constraintVertical_bias="0.835">
+
+        <Button
+            android:id="@+id/SaveBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:text="Sauvegarder"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        app:cardCornerRadius="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/photoProfil"
+                android:layout_width="180dp"
+                android:layout_height="181dp"
+                android:src="@drawable/avatar1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:alpha="0.7"
+                app:layout_constraintBottom_toBottomOf="@+id/photoProfil"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/photoProfil"
+                app:layout_constraintVertical_bias="0.496"
+                app:srcCompat="@drawable/edit2"
+                tools:ignore="VectorDrawableCompat" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

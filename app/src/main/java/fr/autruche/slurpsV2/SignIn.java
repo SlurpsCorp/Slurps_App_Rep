@@ -120,7 +120,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
                     }
 
                     //////////////////redirect play view /////////////////////
-                    Intent openPlay = new Intent(getApplicationContext(), JoinOrCreate.class);
+                    Intent openPlay = new Intent(getApplicationContext(), Menu.class);
                     progressBar.setVisibility(View.GONE);
                     startActivity(openPlay);
                     finish();
