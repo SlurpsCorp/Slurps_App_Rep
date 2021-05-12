@@ -1,6 +1,7 @@
 package fr.autruche.slurpsV2;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -32,9 +34,11 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
 
     private FirebaseDatabase mDatabase;
 
+    private ArrayList<String> userPlayingList  = new ArrayList();
     private EditText code1, code2, code3, code4;
     private EditText[] codes;
-    private String codePartie,joueurID ;
+    private String codePartie;
+    private String selfID = FirebaseAuth.getInstance().getCurrentUser().getUid();
     private Button buttonAcceder;
     private GridLayout gridUser;
     private ImageView waitUser;
@@ -70,12 +74,7 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
         accederPartie();
     }
 
-
-
-
     private void accederPartie() {
-        ArrayList<String> joueurIDlist = new ArrayList<>();
-        joueurID = FirebaseAuth.getInstance().getCurrentUser().getUid();
         codePartie = code1.getText().toString().trim() + code2.getText().toString().trim() + code3.getText().toString().trim() + code4.getText().toString().trim();
 
 
@@ -84,15 +83,43 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 acces = snapshot.getValue(boolean.class);
                 if (acces == true){
-                    Toast.makeText(RejoindrePartie.this, Boolean.toString(acces), Toast.LENGTH_SHORT).show();
-                    mDatabase.getReference("parties/" + codePartie + "joueurIDList").setValue(joueurIDlist);
-
+                    ajout_de_joueur(selfID);
                 }else{
                     Toast.makeText(RejoindrePartie.this,"😢 💩La partie a commencé sans vous! ",Toast.LENGTH_LONG).show();
                 }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+
+    private void ajout_de_joueur(String joueurID) {
+        mDatabase.getReference("parties").child(codePartie).child("listJoueur").child(joueurID).setValue(0);
+        mDatabase.getReference("parties").child(codePartie).child("listJoueur").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                userPlayingList.add(snapshot.getKey());
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                userPlayingList.remove(snapshot.getKey());
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }

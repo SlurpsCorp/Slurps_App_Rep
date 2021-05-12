@@ -24,13 +24,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class CreationPartie extends AppCompatActivity implements View.OnClickListener {
@@ -38,9 +38,11 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
     private FirebaseDatabase mDatabase;
     private FirebaseAuth mAuth;
 
-    private ArrayList<String> userPlayingList  = new ArrayList();
+    private ArrayList<String> arrayOfJoueur = new ArrayList();
+    private ArrayList<Bitmap> arrayOfBitmap  = new ArrayList();
     private TextView code1, code2, code3, code4;
-    private String codePartie,createurID ;
+    private String codePartie;
+    private String selfID = FirebaseAuth.getInstance().getCurrentUser().getUid();
     private NumberPicker timePickerHour, timePickerMinute;
     private Button buttonValider;
     private GridLayout gridUser;
@@ -86,7 +88,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
 
         writePartieOnFirebase();
 
-        getUserPlaying();
+       // getUserPlaying();
 
     }
     protected void onStop(){
@@ -125,50 +127,21 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-    private void writePartieOnFirebase() {
-        createurID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+    private void waitUserIcon() {
 
-        Partie partie = new Partie(codePartie,createurID);
-        mDatabase.getReference("parties/" + codePartie).setValue(partie);
+
+        frameImg.setPadding(60, 60, 60, 60);
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int px = metrics.widthPixels;
+        cote = px / 8;
+
+        waitUser.setAdjustViewBounds(true);
+        waitUser.setMaxHeight(cote);
+        waitUser.setMaxWidth(cote);
+
     }
-
-    public void setImagePlayer(Bitmap bitmap, String idImage) {
-
-        //creation FrameLayout
-        FrameLayout fm = new FrameLayout(gridUser.getContext());
-        fm.setTag(idImage);
-        int p = 60;
-        fm.setPadding(p, p, p, p);
-
-        //creation Cardview
-        CardView cd = new CardView(fm.getContext());
-        cd.setRadius(500);
-
-        // chemin image
-        ImageView v = new ImageView(cd.getContext());
-
-        //rognage bitmap
-        int value = 0;
-        Bitmap finalBitmap=null;
-        if (bitmap.getHeight() <= bitmap.getWidth()) {
-            value = bitmap.getHeight();
-            finalBitmap = Bitmap.createBitmap(bitmap,(bitmap.getWidth()-value)/2 , 0, value, value);
-        } else {
-            value = bitmap.getWidth();
-            finalBitmap = Bitmap.createBitmap(bitmap,0 , (bitmap.getHeight()-value)/2, value, value);
-        }
-
-
-        v.setImageBitmap(finalBitmap);
-        v.setAdjustViewBounds(true);
-        v.setMaxHeight(cote);
-        v.setMaxWidth(cote);
-
-        cd.addView(v);
-        fm.addView(cd);
-        gridUser.addView(fm);
-    }
-
 
     public void codePartie(){
         code1 = (TextView) findViewById(R.id.code1);
@@ -190,7 +163,6 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
 
     }
 
-
     public String randomChar(){
         Random rand = new Random();
         char c = (char)(rand.nextInt(26) + 65);
@@ -198,49 +170,21 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         return myStr;
     }
 
-
-    private void waitUserIcon() {
-
-
-        frameImg.setPadding(60, 60, 60, 60);
-
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        int px = metrics.widthPixels;
-        cote = px / 8;
-
-        waitUser.setAdjustViewBounds(true);
-        waitUser.setMaxHeight(cote);
-        waitUser.setMaxWidth(cote);
-
+    private void writePartieOnFirebase() {
+        Partie partie = new Partie(codePartie,selfID);
+        mDatabase.getReference("parties").child(codePartie).setValue(partie);
+        ajout_de_joueur();
     }
 
-
-    public void addImageprofil(String userId){
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference pdpRef = storage.getReference().child(userId + "png");
-        pdpRef.getBytes(1024*1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-            @Override
-            public void onSuccess(byte[] bytes) {
-                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0 , bytes.length);
-                //setImagePlayer(bitmap,userId);
-                Toast.makeText(CreationPartie.this, userId + "s'est connecté", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    public void deleteImageProfil(String idPlayer){
-
-    }
-    public void getUserPlaying(){
-
-        DatabaseReference refListJoueur = mDatabase.getReference().child("parties").child(codePartie).child("joueurIDlist");
-
-        refListJoueur.addChildEventListener(new ChildEventListener() {
+    private void ajout_de_joueur() {
+        mDatabase.getReference("parties").child(codePartie).child("listJoueur").child(selfID).setValue(0);
+        mDatabase.getReference("parties").child(codePartie).child("listJoueur").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                String idJoueur = snapshot.getValue(String.class);
-                addImageprofil(idJoueur);
+                try{
+                    arrayOfJoueur.add(snapshot.getKey());
+                    retrieveBitmapInArray(snapshot.getKey());
+                }catch (Exception e){}
 
             }
 
@@ -251,8 +195,14 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-                String idJoueur = snapshot.getValue(String.class);
-                deleteImageProfil(idJoueur);
+                try{
+
+                    int position = arrayOfJoueur.indexOf(snapshot.getKey());
+                    arrayOfBitmap.remove(position);
+                    arrayOfJoueur.remove(position);
+                    refreshImageGrid();
+
+                }catch (Exception e){}
             }
 
             @Override
@@ -265,8 +215,66 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
 
             }
         });
-
-        int lo = userPlayingList.size();
-        Toast.makeText(CreationPartie.this,"❌ Une erreur est survenue! Veuillez réessayer!register",Toast.LENGTH_LONG).show();
     }
+
+    public void retrieveBitmapInArray(String userId){
+        mDatabase.getReference("Users").child(userId).child("pdp").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                FirebaseStorage storage = FirebaseStorage.getInstance();
+                StorageReference pdpRef = storage.getReference().child("image_profil").child(snapshot.getValue(String.class));
+                pdpRef.getBytes(1024*1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                    @Override
+                    public void onSuccess(byte[] bytes) {
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0 , bytes.length);
+                        arrayOfBitmap.add(bitmap);
+                        refreshImageGrid();
+                    }
+                });
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+
+    public void refreshImageGrid() {
+
+        for (Bitmap bitmap : arrayOfBitmap){
+            //creation FrameLayout
+            FrameLayout fm = new FrameLayout(gridUser.getContext());
+            int p = 60;
+            fm.setPadding(p, p, p, p);
+
+            //creation Cardview
+            CardView cd = new CardView(fm.getContext());
+            cd.setRadius(500);
+
+            // chemin image
+            ImageView v = new ImageView(cd.getContext());
+
+            //rognage bitmap
+            int value = 0;
+            Bitmap finalBitmap=null;
+            try{
+                if (bitmap.getHeight() <= bitmap.getWidth()) {
+                    value = bitmap.getHeight();
+                    finalBitmap = Bitmap.createBitmap(bitmap,(bitmap.getWidth()-value)/2 , 0, value, value);
+                } else {
+                    value = bitmap.getWidth();
+                    finalBitmap = Bitmap.createBitmap(bitmap,0 , (bitmap.getHeight()-value)/2, value, value);
+                }
+            }catch (Exception e){}
+
+            v.setImageBitmap(finalBitmap);
+            v.setAdjustViewBounds(true);
+            v.setMaxHeight(cote);
+            v.setMaxWidth(cote);
+
+            cd.addView(v);
+            fm.addView(cd);
+            gridUser.addView(fm);
+        }
+    }
+    
 }
