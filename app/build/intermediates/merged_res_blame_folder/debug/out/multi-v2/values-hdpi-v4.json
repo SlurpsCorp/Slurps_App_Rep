@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\atrin\\.gradle\\caches\\transforms-2\\files-2.1\\994d5787a0c5e3a9050593b6e3088631\\appcompat-1.2.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+=======
+            "outputFile": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/Users/elois_ltrn/.gradle/caches/transforms-2/files-2.1/994d5787a0c5e3a9050593b6e3088631/appcompat-1.2.0/res/values-hdpi-v4/values-hdpi-v4.xml",
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

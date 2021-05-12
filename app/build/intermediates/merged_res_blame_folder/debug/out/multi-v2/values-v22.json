@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
             "map": [
                 {
                     "source": "C:\\Users\\atrin\\.gradle\\caches\\transforms-2\\files-2.1\\994d5787a0c5e3a9050593b6e3088631\\appcompat-1.2.0\\res\\values-v22\\values-v22.xml",
+=======
+            "outputFile": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v22/values-v22.xml",
+            "map": [
+                {
+                    "source": "/Users/elois_ltrn/.gradle/caches/transforms-2/files-2.1/994d5787a0c5e3a9050593b6e3088631/appcompat-1.2.0/res/values-v22/values-v22.xml",
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

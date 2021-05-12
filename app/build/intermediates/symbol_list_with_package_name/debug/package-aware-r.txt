@@ -1689,7 +1689,10 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+<<<<<<< HEAD
 drawable avatar1
+=======
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
 drawable avd_hide_password
 drawable avd_show_password
 drawable banner
@@ -1732,11 +1735,17 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+<<<<<<< HEAD
 drawable edit2
 drawable floubgaccueil
 drawable floubgaccueil2
 drawable floubgaccueil3
 drawable floubgprofil
+=======
+drawable floubgaccueil
+drawable floubgaccueil2
+drawable floubgaccueil3
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
 drawable gear
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -1786,7 +1795,10 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+<<<<<<< HEAD
 drawable plus
+=======
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
 drawable quiz
 drawable rectangletitrecode
 drawable slurpimg
@@ -1807,7 +1819,10 @@ id CreerTextView
 id FUNCTION
 id FirstFragment
 id GridLayout
+<<<<<<< HEAD
 id GridLayout1
+=======
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
 id Incription
 id META
 id NO_DEBUG
@@ -1818,7 +1833,10 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+<<<<<<< HEAD
 id SaveBtn
+=======
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
 id SecondFragment
 id TOP_END
 id TOP_START
@@ -1878,7 +1896,10 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+<<<<<<< HEAD
 id addCircle
+=======
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1908,7 +1929,10 @@ id button_choose
 id button_take
 id cache_measures
 id cancel_button
+<<<<<<< HEAD
 id cardView
+=======
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
 id center
 id center_horizontal
 id center_vertical
@@ -2023,7 +2047,10 @@ id image
 id imageBgGirlNet
 id imageCircle
 id imageCircleAccueil
+<<<<<<< HEAD
 id imagePlus
+=======
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
 id imageView
 id imageView10
 id imageView11
@@ -2133,7 +2160,10 @@ id path
 id pathRelative
 id peekHeight
 id percent
+<<<<<<< HEAD
 id photoProfil
+=======
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
 id picture
 id pin
 id position
@@ -2142,7 +2172,10 @@ id progressBar
 id progressBar2
 id progress_circular
 id progress_horizontal
+<<<<<<< HEAD
 id pseudoEditText
+=======
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
 id radio
 id ratio
 id rectangles
@@ -2163,7 +2196,10 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+<<<<<<< HEAD
 id scrollView1
+=======
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
 id scrollable
 id search_badge
 id search_bar
@@ -2235,8 +2271,11 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+<<<<<<< HEAD
 id textView2
 id textView3
+=======
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2346,11 +2385,16 @@ layout abc_tooltip
 layout activity_accueil
 layout activity_creation_partie
 layout activity_join_or_create
+<<<<<<< HEAD
 layout activity_menu
 layout activity_passwd_forgot
 layout activity_photo
 layout activity_profil
 layout activity_profils_grid
+=======
+layout activity_passwd_forgot
+layout activity_photo
+>>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
 layout activity_register
 layout activity_rejoindre_partie
 layout activity_sign_in
