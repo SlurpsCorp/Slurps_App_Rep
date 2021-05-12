@@ -116,7 +116,6 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
                         editor.putString("password", "");
                         editor.putBoolean("isChecked", false);
                         editor.commit();
-
                     }
 
                     //////////////////redirect play view /////////////////////

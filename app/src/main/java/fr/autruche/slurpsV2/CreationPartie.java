@@ -80,14 +80,13 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
 
         writePartieOnFirebase();
 
-
-
-//        if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.RESUMED)){
-//            FirebaseDatabase.getInstance().getReference("parties").child(codePartie).removeValue();
-//        }
-//        if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.DESTROYED)){
-//            FirebaseDatabase.getInstance().getReference("parties").child(codePartie).removeValue();
-//        }
+    }
+    protected void onStop(){
+        super.onStop();
+        try{
+            mDatabase.getReference().child("parties").child(codePartie).setValue(null);
+        }catch (Exception e){
+        }
     }
 
     @Override
@@ -196,7 +195,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         waitUser.setMaxWidth(cote);
     }
 
-    public void setCloudImageView(String userId){
+    public void addImageprofil(String userId){
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference pdpRef = storage.getReference().child(mAuth.getCurrentUser().getUid() + "png");
         pdpRef.getBytes(1024*1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
@@ -208,39 +207,35 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         });
     }
 
-    public void getUserPlaying(String partieID){
+    public void deleteImageProfil(){
 
-                    DatabaseReference refListJoueur = (DatabaseReference) mDatabase.getReference().child("partie").child(partieID).child("joueurIDlist").addChildEventListener(new ChildEventListener() {
+    }
+    public void getUserPlaying(){
+
+        DatabaseReference refListJoueur = mDatabase.getReference().child("parties").child(codePartie).child("joueurIDlist");
+
+        refListJoueur.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                try{
-                    userPlayingList = snapshot.getValue(ArrayList.class);
-                } catch (Throwable e) {
-                }
+                String idJoueur = snapshot.getValue(String.class);
+                addImageprofil(idJoueur);
+
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                try{
-                    userPlayingList  = snapshot.getValue(ArrayList.class);
-                } catch (Throwable e) {
-                }
+
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-                try{
-                    userPlayingList  = snapshot.getValue(ArrayList.class);
-                } catch (Throwable e) {
-                }
+                String idJoueur = snapshot.getValue(String.class);
+                deleteImageProfil();
             }
 
             @Override
             public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                try{
-                    userPlayingList  = snapshot.getValue(ArrayList.class);
-                } catch (Throwable e) {
-                }
+
             }
 
             @Override
@@ -248,6 +243,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
 
             }
         });
+
         int lo = userPlayingList.size();
         Toast.makeText(CreationPartie.this,"❌ Une erreur est survenue! Veuillez réessayer!register",Toast.LENGTH_LONG).show();
     }
