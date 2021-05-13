@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-#Wed May 12 17:40:16 CEST 2021
+#Thu May 13 03:01:42 CEST 2021
 base.0=C\:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-=======
-#Mon May 10 15:23:02 CEST 2021
-base.0=/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
->>>>>>> aae887335e9b4df520a87eded3d96b3b5fd331c6
 path.0=classes.dex
 renamed.0=classes.dex

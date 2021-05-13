@@ -5,16 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.media.Image;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 public class JoinOrCreate extends AppCompatActivity implements View.OnClickListener {
 
@@ -47,7 +42,7 @@ public class JoinOrCreate extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        creerTextView = (TextView) findViewById(R.id.CreerTextView);
+        creerTextView = (TextView) findViewById(R.id.RejoindreTextView);
         creerTextView.setOnClickListener(this);
         creerTextView.setOnTouchListener(new View.OnTouchListener() {
             @Override

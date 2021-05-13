@@ -16,7 +16,7 @@
         android:id="@+id/pseudoEditText"
         android:layout_width="260dp"
         android:layout_height="54dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:fontFamily="@font/roboto_condensed_bold"
         android:gravity="center"
@@ -49,7 +49,8 @@
             android:fontFamily="@font/roboto_condensed_bold"
             android:text="Sauvegarder"
             android:textColor="#000000"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            app:rippleColor="#FFFFFF" />
 
     </androidx.cardview.widget.CardView>
 

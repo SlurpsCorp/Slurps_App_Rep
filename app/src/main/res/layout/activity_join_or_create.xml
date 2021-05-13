@@ -64,7 +64,7 @@ tools:context=".JoinOrCreate">
         app:layout_constraintVertical_bias="0.093" />
 
     <TextView
-    android:id="@+id/CreerTextView"
+    android:id="@+id/RejoindreTextView"
     android:layout_width="165dp"
     android:layout_height="84dp"
     android:fontFamily="@font/brusher"

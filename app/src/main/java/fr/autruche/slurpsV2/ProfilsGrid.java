@@ -10,10 +10,12 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +31,7 @@ public class ProfilsGrid extends AppCompatActivity {
     private GridLayout gridLayout1;
     private ImageView addCircle;
     private int c;
-    //private TextView debug;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +78,10 @@ public class ProfilsGrid extends AppCompatActivity {
 
 
 
+
+
         refresh();
+
         createOnClickPhotoBtn();
     }
     /*
@@ -130,7 +135,7 @@ public class ProfilsGrid extends AppCompatActivity {
 
         //ragnage bitmap
         int value = 0;
-        Bitmap finalBitmap=null;
+        Bitmap finalBitmap;
         if (bitmap.getHeight() <= bitmap.getWidth()) {
             value = bitmap.getHeight();
             finalBitmap = Bitmap.createBitmap(bitmap,(bitmap.getWidth()-value)/2 , 0, value, value);
@@ -173,22 +178,28 @@ public class ProfilsGrid extends AppCompatActivity {
         BitmapDrawable bitmapDrawable = (BitmapDrawable) picture.getDrawable();
         Bitmap bitmap = bitmapDrawable.getBitmap();
 
-        FileOutputStream outputStream = null;
+        FileOutputStream outputStream=null;
         java.io.File file = Environment.getExternalStorageDirectory();
         java.io.File dir = new java.io.File(file.getAbsolutePath() + "/ASlurps2");
         dir.mkdirs();
 
         String filename = "ProfileImage.png";
-                //String.format("%d.png",System.currentTimeMillis());
-        java.io.File outFile = new java.io.File(dir,filename);
+
+        java.io.File outFile = new java.io.File(dir, filename);
+
+        if(outFile == null)
+            Log.i("TAG1","outfile error");
+
         try{
             outputStream = new FileOutputStream(outFile);
         }catch (Exception e){
+            Log.e("TAG1","outPutStream error");
+            //Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
         bitmap.compress(Bitmap.CompressFormat.PNG,100,outputStream);
 
-        Toast.makeText(this, "Image saved to internal!", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Image saved to internal!", Toast.LENGTH_SHORT).show();
         try{
             outputStream.flush();
         }catch (Exception e){
@@ -196,11 +207,12 @@ public class ProfilsGrid extends AppCompatActivity {
         }
         try{
             outputStream.close();
-        }
-        catch (Exception e){
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
+
+
     //-------------------ECRITURE ET LECTURE FICHIER------------------------------------------------
 
     private void refresh() {

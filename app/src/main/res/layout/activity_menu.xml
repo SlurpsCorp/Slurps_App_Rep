@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/RejoindreTextView"
         android:layout_width="184dp"
         android:layout_height="81dp"
         android:fontFamily="@font/brusher"
@@ -63,7 +63,7 @@
         app:layout_constraintVertical_bias="0.068" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/CreerTextView"
         android:layout_width="165dp"
         android:layout_height="84dp"
         android:fontFamily="@font/brusher"
