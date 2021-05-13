@@ -89,8 +89,6 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
 
         writePartieOnFirebase();
 
-       // getUserPlaying();
-
     }
     protected void onStop(){
         super.onStop();
@@ -136,7 +134,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         int px = metrics.widthPixels;
-        cote = px / 8;
+        cote = px / 5;
 
         waitUser.setAdjustViewBounds(true);
         waitUser.setMaxHeight(cote);
@@ -275,7 +273,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
             DisplayMetrics metrics = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(metrics);
             int px = metrics.widthPixels;
-            cote2 = px / 8;
+            cote2 = px / 5;
 
             v.setImageBitmap(finalBitmap);
             v.setAdjustViewBounds(true);

@@ -130,9 +130,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
                             if(task.isSuccessful()){
 
                                 //////////////////redirect play view /////////////////////
-                                Intent openPlay = new Intent(getApplicationContext(), SignIn.class);
+                                Intent signIn = new Intent(getApplicationContext(), SignIn.class);
                                 progressBar.setVisibility(View.GONE);
-                                startActivity(openPlay);
+                                startActivity(signIn);
                                 finish();
 
 
