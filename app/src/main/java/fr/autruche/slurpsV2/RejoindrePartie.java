@@ -4,11 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -57,7 +59,10 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
     private FrameLayout frameImg;
     private ProgressBar progressBar;
     private CardView cardViewButton;
-    private int cote;
+    private int px;
+    private int coteImg;
+    private int interImg;
+    private ConstraintLayout constraintL;
     private boolean acces;
 
 
@@ -85,6 +90,14 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
         gridUser = findViewById(R.id.GridLayout);
         gridUser.setVisibility(View.INVISIBLE);
         waitUser = findViewById(R.id.waitUser);
+        constraintL = findViewById(R.id.consti);
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        px = metrics.widthPixels;
+        coteImg = px/5;
+        interImg = coteImg /4;
 
         codePartie();
 
@@ -219,8 +232,7 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
         for (Bitmap bitmap : arrayOfBitmap){
             //creation FrameLayout
             FrameLayout fm = new FrameLayout(gridUser.getContext());
-            int p = 60;
-            fm.setPadding(p, p, p, p);
+            fm.setPadding(interImg,interImg,interImg,interImg);
 
             //creation Cardview
             CardView cd = new CardView(fm.getContext());
@@ -246,13 +258,11 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
 
             v.setImageBitmap(finalBitmap);
             v.setAdjustViewBounds(true);
-            v.setMaxHeight(cote);
-            v.setMaxWidth(cote);
+            v.setMinimumWidth(coteImg);
+            v.setMinimumHeight(coteImg);
 
             cd.addView(v);
             fm.addView(cd);
-            fm.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,FrameLayout.LayoutParams.WRAP_CONTENT));
-
             gridUser.addView(fm);
         }
     }
@@ -272,17 +282,25 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
     }
 
     private void waitUserIcon() {
-        gridUser = (GridLayout) findViewById(R.id.GridLayout);
+        FrameLayout fm = new FrameLayout(gridUser.getContext());
+        fm.setPadding(interImg,interImg,interImg,interImg);
 
-        waitUser = (ImageView)  findViewById(R.id.waitUser);
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        int px = metrics.widthPixels;
+        //creation Cardview
+        CardView cd = new CardView(fm.getContext());
+        cd.setRadius(500);
 
-        cote = px / 5;
-        waitUser.setAdjustViewBounds(true);
-        waitUser.setMaxHeight(cote);
-        waitUser.setMaxWidth(cote);
+        // chemin image
+        ImageView v = new ImageView(cd.getContext());
+
+        v.setImageDrawable(Drawable.createFromPath("@drawable/ic_userwaiting"));
+        v.setAdjustViewBounds(true);
+        v.setMinimumWidth(coteImg);
+        v.setMinimumHeight(coteImg);
+
+        cd.addView(v);
+        fm.addView(cd);
+
+        constraintL.addView(fm,0);
     }
 
 

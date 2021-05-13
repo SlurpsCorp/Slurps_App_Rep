@@ -5,9 +5,11 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -53,7 +55,9 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
     private ImageView waitUser;
     private ProgressBar progressBar;
     private int px;
-    private int increment = 0;
+    private int coteImg;
+    private int interImg;
+    private ConstraintLayout constraintL;
 
 
 
@@ -82,10 +86,13 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         frameImg = findViewById(R.id.frameLayout1);
         gridUser = findViewById(R.id.GridLayout);
         waitUser = findViewById(R.id.waitUser);
+        constraintL = findViewById(R.id.consti);
 
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         px = metrics.widthPixels;
+        coteImg = px/5;
+        interImg = coteImg /4;
 
 
         codePartie();
@@ -134,14 +141,25 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
 
     private void waitUserIcon() {
 
+        FrameLayout fm = new FrameLayout(gridUser.getContext());
+        fm.setPadding(interImg,interImg,interImg,interImg);
 
-        frameImg.setPadding(60, 60, 60, 60);
+        //creation Cardview
+        CardView cd = new CardView(fm.getContext());
+        cd.setRadius(500);
 
-        waitUser.setAdjustViewBounds(true);
-        int cote = px /8;
-        waitUser.setMaxHeight(cote);
-        waitUser.setMaxWidth(cote);
+        // chemin image
+        ImageView v = new ImageView(cd.getContext());
 
+        v.setImageDrawable(Drawable.createFromPath("@drawable/ic_userwaiting"));
+        v.setAdjustViewBounds(true);
+        v.setMinimumWidth(coteImg);
+        v.setMinimumHeight(coteImg);
+
+        cd.addView(v);
+        fm.addView(cd);
+
+        constraintL.addView(fm,0);
     }
 
     public void codePartie(){
@@ -254,8 +272,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         for (Bitmap bitmap : arrayOfBitmap){
             //creation FrameLayout
             FrameLayout fm = new FrameLayout(gridUser.getContext());
-            int p = 60;
-            fm.setPadding(p, p, p, p);
+            fm.setPadding(interImg,interImg,interImg,interImg);
 
             //creation Cardview
             CardView cd = new CardView(fm.getContext());
@@ -277,17 +294,13 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
                 }
             }catch (Exception e){}
 
-
-
             v.setImageBitmap(finalBitmap);
             v.setAdjustViewBounds(true);
-            int cote = px / 5;
-            v.setMaxHeight(cote);
-            v.setMaxWidth(cote);
+            v.setMinimumWidth(coteImg);
+            v.setMinimumHeight(coteImg);
 
             cd.addView(v);
             fm.addView(cd);
-            fm.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,FrameLayout.LayoutParams.WRAP_CONTENT));
 
             gridUser.addView(fm);
         }

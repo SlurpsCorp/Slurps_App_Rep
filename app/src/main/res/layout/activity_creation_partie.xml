@@ -253,16 +253,20 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <LinearLayout
+                    android:id="@+id/linearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="152dp">
 
                     <GridLayout
                         android:id="@+id/GridLayout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginTop="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="20dp"
                         android:columnCount="3"
                         android:columnOrderPreserved="true"
                         android:fadeScrollbars="true"
@@ -272,33 +276,25 @@
                         <FrameLayout
                             android:id="@+id/frameLayout1"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_column="0">
+
 
                             <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/consti">
 
-                                <ImageView
-                                    android:id="@+id/waitUser"
-                                    android:layout_width="0dp"
-                                    android:layout_height="0dp"
-                                    android:foregroundGravity="top|center_horizontal"
-                                    android:src="@drawable/ic_userwaiting"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
 
                                 <ProgressBar
                                     android:id="@+id/progressBar2"
                                     style="?android:attr/progressBarStyle"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_margin="30dp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
+                                    app:layout_constraintBottom_toBottomOf="@+id/consti"
+                                    app:layout_constraintEnd_toEndOf="@+id/consti"
+                                    app:layout_constraintStart_toStartOf="@+id/consti"
+                                    app:layout_constraintTop_toTopOf="@+id/consti" />
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </FrameLayout>
