@@ -3,7 +3,9 @@ package fr.autruche.slurpsV2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -40,7 +42,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     private Button buttonRegister;
     private ProgressBar progressBar;
     private String pseudoDefault;
-
+    private SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +114,14 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                    sp = getSharedPreferences("emailSaved", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sp.edit();
+
+                    editor.putString("email", email);
+                    editor.putString("password", passwd);
+                    editor.putBoolean("isChecked", true);
+                    editor.commit();
 
                     User user = new User(pseudoDefault, email);
                     mDatabase.getReference("Users").child(mAuth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
