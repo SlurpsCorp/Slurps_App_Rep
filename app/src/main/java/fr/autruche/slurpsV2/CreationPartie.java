@@ -9,6 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -43,10 +44,10 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
     private FirebaseDatabase mDatabase;
     private FirebaseAuth mAuth;
 
-    private ArrayList<String> arrayOfJoueur = new ArrayList();
+    private static ArrayList<String> arrayOfJoueur = new ArrayList();
     private ArrayList<Bitmap> arrayOfBitmap  = new ArrayList();
     private TextView code1, code2, code3, code4;
-    private String codePartie;
+    private static String codePartie;
     private String selfID = FirebaseAuth.getInstance().getCurrentUser().getUid();
     private NumberPicker timePickerHour, timePickerMinute;
     private Button buttonValider;
@@ -91,8 +92,11 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         px = metrics.widthPixels;
+        Toast.makeText(this, Integer.toString(px), Toast.LENGTH_SHORT).show();
         coteImg = px/5;
         interImg = coteImg /4;
+        Toast.makeText(this, Integer.toString(coteImg), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, Integer.toString(interImg), Toast.LENGTH_SHORT).show();
 
 
         codePartie();
@@ -151,7 +155,10 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         // chemin image
         ImageView v = new ImageView(cd.getContext());
 
-        v.setImageDrawable(Drawable.createFromPath("@drawable/ic_userwaiting"));
+        Drawable myDrawable = getResources().getDrawable(R.drawable.userwaiting);
+        Bitmap myLogo = ((BitmapDrawable) myDrawable).getBitmap();
+        v.setImageBitmap(Bitmap.createScaledBitmap(myLogo, coteImg, coteImg, false));
+
         v.setAdjustViewBounds(true);
         v.setMinimumWidth(coteImg);
         v.setMinimumHeight(coteImg);
@@ -250,7 +257,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onSuccess(byte[] bytes) {
                         Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0 , bytes.length);
-                        arrayOfBitmap.add(bitmap);
+                        arrayOfBitmap.add(Bitmap.createScaledBitmap(bitmap, coteImg, coteImg, false));
                         refreshImageGrid();
                     }
                 });
@@ -281,21 +288,10 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
             // chemin image
             ImageView v = new ImageView(cd.getContext());
 
-            //rognage bitmap
-            int value = 0;
-            Bitmap finalBitmap=null;
-            try{
-                if (bitmap.getHeight() <= bitmap.getWidth()) {
-                    value = bitmap.getHeight();
-                    finalBitmap = Bitmap.createBitmap(bitmap,(bitmap.getWidth()-value)/2 , 0, value, value);
-                } else {
-                    value = bitmap.getWidth();
-                    finalBitmap = Bitmap.createBitmap(bitmap,0 , (bitmap.getHeight()-value)/2, value, value);
-                }
-            }catch (Exception e){}
 
-            v.setImageBitmap(finalBitmap);
+            v.setImageBitmap(bitmap);
             v.setAdjustViewBounds(true);
+
             v.setMinimumWidth(coteImg);
             v.setMinimumHeight(coteImg);
 

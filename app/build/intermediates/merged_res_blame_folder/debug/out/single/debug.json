@@ -184,6 +184,10 @@
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/font/brusher.ttf"
     },
     {
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_userwaiting.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/userwaiting.png"
+    },
+    {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_passwd_forgot.xml.flat",
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_passwd_forgot.xml"
     },

@@ -10,6 +10,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
@@ -46,11 +47,11 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
 
     private FirebaseDatabase mDatabase;
 
-    private ArrayList<String> arrayOfJoueur = new ArrayList();
+    private static ArrayList<String> arrayOfJoueur = new ArrayList();
     private ArrayList<Bitmap> arrayOfBitmap  = new ArrayList();
     private EditText code1, code2, code3, code4;
     private EditText[] codes;
-    private String codePartie;
+    private static String codePartie;
     private String createurID;
     private String selfID = FirebaseAuth.getInstance().getCurrentUser().getUid();
     private Button buttonAcceder;
@@ -211,7 +212,7 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
                     @Override
                     public void onSuccess(byte[] bytes) {
                         Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0 , bytes.length);
-                        arrayOfBitmap.add(bitmap);
+                        arrayOfBitmap.add(Bitmap.createScaledBitmap(bitmap, coteImg, coteImg, false));
                         refreshImageGrid();
                     }
                 });
@@ -241,28 +242,16 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
             // chemin image
             ImageView v = new ImageView(cd.getContext());
 
-            //rognage bitmap
-            int value = 0;
-            Bitmap finalBitmap=null;
-            try{
-                if (bitmap.getHeight() <= bitmap.getWidth()) {
-                    value = bitmap.getHeight();
-                    finalBitmap = Bitmap.createBitmap(bitmap,(bitmap.getWidth()-value)/2 , 0, value, value);
-                } else {
-                    value = bitmap.getWidth();
-                    finalBitmap = Bitmap.createBitmap(bitmap,0 , (bitmap.getHeight()-value)/2, value, value);
-                }
-            }catch (Exception e){}
 
-
-
-            v.setImageBitmap(finalBitmap);
+            v.setImageBitmap(bitmap);
             v.setAdjustViewBounds(true);
+
             v.setMinimumWidth(coteImg);
             v.setMinimumHeight(coteImg);
 
             cd.addView(v);
             fm.addView(cd);
+
             gridUser.addView(fm);
         }
     }
@@ -292,7 +281,9 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
         // chemin image
         ImageView v = new ImageView(cd.getContext());
 
-        v.setImageDrawable(Drawable.createFromPath("@drawable/ic_userwaiting"));
+        Drawable myDrawable = getResources().getDrawable(R.drawable.userwaiting);
+        Bitmap myLogo = ((BitmapDrawable) myDrawable).getBitmap();
+        v.setImageBitmap(Bitmap.createScaledBitmap(myLogo, coteImg, coteImg, false));
         v.setAdjustViewBounds(true);
         v.setMinimumWidth(coteImg);
         v.setMinimumHeight(coteImg);

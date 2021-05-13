@@ -1,10 +1,13 @@
 fr/autruche/slurpsV2/User.java
  fr.autruche.slurpsV2.User
-fr/autruche/slurpsV2/CreationPartie.java
- fr.autruche.slurpsV2.CreationPartie
- fr.autruche.slurpsV2.CreationPartie$1
- fr.autruche.slurpsV2.CreationPartie$2
- fr.autruche.slurpsV2.CreationPartie$2$1
+fr/autruche/slurpsV2/BuildConfig.java
+ fr.autruche.slurpsV2.BuildConfig
+fr/autruche/slurpsV2/Partie.java
+ fr.autruche.slurpsV2.Partie
+fr/autruche/slurpsV2/UserForScore.java
+ fr.autruche.slurpsV2.UserForScore
+fr/autruche/slurpsV2/AlexGrid.java
+ fr.autruche.slurpsV2.AlexGrid
 fr/autruche/slurpsV2/Register.java
  fr.autruche.slurpsV2.Register
  fr.autruche.slurpsV2.Register$1
@@ -20,12 +23,11 @@ fr/autruche/slurpsV2/SignIn.java
 fr/autruche/slurpsV2/PasswdForgot.java
  fr.autruche.slurpsV2.PasswdForgot
  fr.autruche.slurpsV2.PasswdForgot$1
-fr/autruche/slurpsV2/Partie.java
- fr.autruche.slurpsV2.Partie
-fr/autruche/slurpsV2/BuildConfig.java
- fr.autruche.slurpsV2.BuildConfig
-fr/autruche/slurpsV2/AlexGrid.java
- fr.autruche.slurpsV2.AlexGrid
+fr/autruche/slurpsV2/CreationPartie.java
+ fr.autruche.slurpsV2.CreationPartie
+ fr.autruche.slurpsV2.CreationPartie$1
+ fr.autruche.slurpsV2.CreationPartie$2
+ fr.autruche.slurpsV2.CreationPartie$2$1
 fr/autruche/slurpsV2/JoinOrCreate.java
  fr.autruche.slurpsV2.JoinOrCreate
  fr.autruche.slurpsV2.JoinOrCreate$1
