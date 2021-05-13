@@ -5,6 +5,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -47,35 +49,54 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
     private EditText code1, code2, code3, code4;
     private EditText[] codes;
     private String codePartie;
+    private String createurID;
     private String selfID = FirebaseAuth.getInstance().getCurrentUser().getUid();
     private Button buttonAcceder;
     private GridLayout gridUser;
     private ImageView waitUser;
+    private FrameLayout frameImg;
     private ProgressBar progressBar;
+    private CardView cardViewButton;
     private int cote;
     private boolean acces;
 
-    private TextView textaaa;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rejoindre_partie);
 
-        textaaa = findViewById(R.id.textaaa);
-
         mDatabase = FirebaseDatabase.getInstance();
-        code1 = findViewById(R.id.code1);
-        code2 = findViewById(R.id.code2);
-        code3 = findViewById(R.id.code3);
-        code4 = findViewById(R.id.code4);
+
+        code1 = findViewById(R.id.codo1);
+        code2 = findViewById(R.id.codo2);
+        code3 = findViewById(R.id.codo3);
+        code4 = findViewById(R.id.codo4);
 
         buttonAcceder = findViewById(R.id.ButtonAcceder);
         buttonAcceder.setOnClickListener(this);
 
+        progressBar = (ProgressBar) findViewById(R.id.progressBar2);
+        progressBar.setVisibility(View.VISIBLE);
+
+        cardViewButton = findViewById(R.id.cardView);
+        frameImg = findViewById(R.id.frameLayout2);
+        gridUser = findViewById(R.id.GridLayout);
+        gridUser.setVisibility(View.INVISIBLE);
+        waitUser = findViewById(R.id.waitUser);
+
         codePartie();
 
         waitUserIcon();
+    }
+
+    protected void onDestroy(){
+        super.onDestroy();
+        try{
+            mDatabase.getReference().child("parties").child(codePartie).child("listJoueur").child(selfID).setValue(null);
+        }catch (Exception e){
+        }
     }
 
     @Override
@@ -93,6 +114,9 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
                 acces = snapshot.getValue(boolean.class);
                 if (acces == true){
                     ajout_de_joueur();
+                    gridUser.setVisibility(View.VISIBLE);
+                    buttonAcceder.setVisibility(View.GONE);
+                    cardViewButton.setVisibility(View.GONE);
                 }else{
                     Toast.makeText(RejoindrePartie.this,"😢 💩La partie a commencé sans vous! ",Toast.LENGTH_LONG).show();
                 }
@@ -106,6 +130,18 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
 
     private void ajout_de_joueur() {
         mDatabase.getReference("parties").child(codePartie).child("listJoueur").child(selfID).setValue(0);
+        mDatabase.getReference("parties").child(codePartie).child("createurID").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                createurID = snapshot.getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         mDatabase.getReference("parties").child(codePartie).child("listJoueur").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -122,12 +158,20 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                String removedID = snapshot.getKey();
+                System.out.println(removedID + '\n' + createurID);
                 try{
-
-                    int position = arrayOfJoueur.indexOf(snapshot.getKey());
-                    arrayOfBitmap.remove(position);
-                    arrayOfJoueur.remove(position);
-                    refreshImageGrid();
+                    if (removedID.equals(createurID)) {
+                        //Intent quite = new Intent(getApplicationContext(), JoinOrCreate.class);
+                        //startActivity(quite);
+                        finish();
+                        Toast.makeText(RejoindrePartie.this, "😱 Le créateur est parti !", Toast.LENGTH_SHORT).show();
+                    }else{
+                        int position = arrayOfJoueur.indexOf(snapshot.getKey());
+                        arrayOfBitmap.remove(position);
+                        arrayOfJoueur.remove(position);
+                        refreshImageGrid();
+                    }
 
                 }catch (Exception e){}
             }
@@ -165,17 +209,17 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
         });
     }
 
-
     public void refreshImageGrid() {
 
-        int cote2;
+        try{
+            gridUser.removeViews(1, gridUser.getChildCount()-1);
+        }catch(Exception e){}
 
-        gridUser.removeViews(1, arrayOfBitmap.size()-1);
 
         for (Bitmap bitmap : arrayOfBitmap){
             //creation FrameLayout
             FrameLayout fm = new FrameLayout(gridUser.getContext());
-            int p = 10;
+            int p = 60;
             fm.setPadding(p, p, p, p);
 
             //creation Cardview
@@ -199,28 +243,21 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
             }catch (Exception e){}
 
 
-            DisplayMetrics metrics = new DisplayMetrics();
-            getWindowManager().getDefaultDisplay().getMetrics(metrics);
-            int px = metrics.widthPixels;
-            cote2 = px / 5;
 
             v.setImageBitmap(finalBitmap);
             v.setAdjustViewBounds(true);
-            v.setMaxHeight(cote2);
-            v.setMaxWidth(cote2);
-            //v.setForegroundGravity(Gravity.CENTER_VERTICAL);
+            v.setMaxHeight(cote);
+            v.setMaxWidth(cote);
 
             cd.addView(v);
             fm.addView(cd);
+            fm.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,FrameLayout.LayoutParams.WRAP_CONTENT));
+
             gridUser.addView(fm);
         }
     }
 
     public void codePartie(){
-        code1 =  findViewById(R.id.code1);
-        code2 =  findViewById(R.id.code2);
-        code3 =  findViewById(R.id.code3);
-        code4 =  findViewById(R.id.code4);
         codes = new EditText[]{code1, code2, code3, code4};
 
         code1.addTextChangedListener(new PinTextWatcher(0));

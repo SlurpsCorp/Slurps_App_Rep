@@ -91,8 +91,8 @@
                         app:srcCompat="@drawable/code1"
                         tools:ignore="MissingConstraints" />
 
-                    <TextView
-                        android:id="@+id/code1"
+                    <EditText
+                        android:id="@+id/codo1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:cursorVisible="false"
@@ -120,8 +120,8 @@
                         app:srcCompat="@drawable/code2"
                         tools:ignore="MissingConstraints" />
 
-                    <TextView
-                        android:id="@+id/code2"
+                    <EditText
+                        android:id="@+id/codo2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:cursorVisible="false"
@@ -149,8 +149,8 @@
                         app:srcCompat="@drawable/code3"
                         tools:ignore="MissingConstraints" />
 
-                    <TextView
-                        android:id="@+id/code3"
+                    <EditText
+                        android:id="@+id/codo3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:cursorVisible="false"
@@ -177,8 +177,8 @@
                         app:srcCompat="@drawable/code4"
                         tools:ignore="MissingConstraints" />
 
-                    <TextView
-                        android:id="@+id/code4"
+                    <EditText
+                        android:id="@+id/codo4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:cursorVisible="false"
@@ -197,6 +197,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
                     android:layout_width="271dp"
                     android:layout_height="89dp"
                     android:layout_gravity="center_horizontal"
@@ -228,7 +229,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginTop="30dp"
-                        android:columnCount="2"
+                        android:columnCount="3"
                         android:columnOrderPreserved="true"
                         android:fadeScrollbars="true"
                         android:fadingEdge="vertical"

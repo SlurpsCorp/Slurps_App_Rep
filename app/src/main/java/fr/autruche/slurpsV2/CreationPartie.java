@@ -52,7 +52,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
     private FrameLayout frameImg;
     private ImageView waitUser;
     private ProgressBar progressBar;
-    private int cote;
+    private int px;
     private int increment = 0;
 
 
@@ -79,9 +79,14 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         progressBar = (ProgressBar) findViewById(R.id.progressBar2);
         progressBar.setVisibility(View.VISIBLE);
 
-        frameImg = findViewById(R.id.frameLayout2);
+        frameImg = findViewById(R.id.frameLayout1);
         gridUser = findViewById(R.id.GridLayout);
         waitUser = findViewById(R.id.waitUser);
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        px = metrics.widthPixels;
+
 
         codePartie();
 
@@ -90,10 +95,11 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         writePartieOnFirebase();
 
     }
-    protected void onStop(){
-        super.onStop();
+    protected void onDestroy(){
+        super.onDestroy();
         try{
-            mDatabase.getReference().child("parties").child(codePartie).setValue(null);
+            mDatabase.getReference().child("parties").child(codePartie).child("listJoueur").child(selfID).setValue(null);
+            finish();
         }catch (Exception e){
         }
     }
@@ -118,7 +124,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
             FirebaseDatabase.getInstance().getReference("parties/"+ codePartie + "/heurePartie").setValue(TimePickerHour);
             FirebaseDatabase.getInstance().getReference("parties/" + codePartie + "/minutePartie").setValue(TimePickerMinute);
             FirebaseDatabase.getInstance().getReference("parties/" + codePartie + "/acces").setValue(false);
-            Toast.makeText(CreationPartie.this,"⚠️ Partie lancée et injoignable !",Toast.LENGTH_LONG).show();
+            Toast.makeText(CreationPartie.this,"⚠️ Partie lancée et maintenant injoignable !",Toast.LENGTH_LONG).show();
             return;
         }else{
             Toast.makeText(CreationPartie.this,"⚠️ Veuillez choisir la durée de la partie !",Toast.LENGTH_LONG).show();
@@ -131,12 +137,8 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
 
         frameImg.setPadding(60, 60, 60, 60);
 
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        int px = metrics.widthPixels;
-        cote = px / 5;
-
         waitUser.setAdjustViewBounds(true);
+        int cote = px /8;
         waitUser.setMaxHeight(cote);
         waitUser.setMaxWidth(cote);
 
@@ -193,11 +195,16 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+
                 try{
 
                     int position = arrayOfJoueur.indexOf(snapshot.getKey());
+                    Toast.makeText(CreationPartie.this, Integer.toString(position), Toast.LENGTH_SHORT).show();
+                    System.out.println(arrayOfJoueur);
                     arrayOfBitmap.remove(position);
                     arrayOfJoueur.remove(position);
+                    System.out.println(arrayOfJoueur);
                     refreshImageGrid();
 
                 }catch (Exception e){}
@@ -239,14 +246,15 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
 
     public void refreshImageGrid() {
 
-        int cote2;
+        try{
+            gridUser.removeViews(1, gridUser.getChildCount()-1);
+        }catch(Exception e){}
 
-        gridUser.removeViews(1, arrayOfBitmap.size()-1);
 
         for (Bitmap bitmap : arrayOfBitmap){
             //creation FrameLayout
             FrameLayout fm = new FrameLayout(gridUser.getContext());
-            int p = 10;
+            int p = 60;
             fm.setPadding(p, p, p, p);
 
             //creation Cardview
@@ -270,19 +278,17 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
             }catch (Exception e){}
 
 
-            DisplayMetrics metrics = new DisplayMetrics();
-            getWindowManager().getDefaultDisplay().getMetrics(metrics);
-            int px = metrics.widthPixels;
-            cote2 = px / 5;
 
             v.setImageBitmap(finalBitmap);
             v.setAdjustViewBounds(true);
-            v.setMaxHeight(cote2);
-            v.setMaxWidth(cote2);
-            //v.setForegroundGravity(Gravity.CENTER_VERTICAL);
+            int cote = px / 5;
+            v.setMaxHeight(cote);
+            v.setMaxWidth(cote);
 
             cd.addView(v);
             fm.addView(cd);
+            fm.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,FrameLayout.LayoutParams.WRAP_CONTENT));
+
             gridUser.addView(fm);
         }
     }

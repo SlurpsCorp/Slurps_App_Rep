@@ -144,13 +144,13 @@ public class JoinOrCreate extends AppCompatActivity implements View.OnClickListe
                 String date_creation = snapshot.child("date").getValue(String.class);
                 String id = snapshot.child("codePartie").getValue(String.class);
 
-                int annee_crea = Integer.parseInt(date_creation.substring(0,4));
-                int mois_crea = Integer.parseInt(date_creation.substring(4, 6));
-                int jour_crea = Integer.parseInt(date_creation.substring(6, 8));
-                int heure_crea = Integer.parseInt(date_creation.substring(8, 10));
-                int min_crea = Integer.parseInt(date_creation.substring(10, 12));
-                int sec_crea = Integer.parseInt(date_creation.substring(12, 14));
                 try {
+
+                    int annee_crea = Integer.parseInt(date_creation.substring(0,4));
+                    int mois_crea = Integer.parseInt(date_creation.substring(4, 6));
+                    int jour_crea = Integer.parseInt(date_creation.substring(6, 8));
+                    int heure_crea = Integer.parseInt(date_creation.substring(8, 10));
+
                     if (annee_crea != annee_actu){
                         mDatabase.getReference().child("parties").child(id).setValue(null);
                     }else{

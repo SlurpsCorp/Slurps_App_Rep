@@ -1902,6 +1902,7 @@ id button_choose
 id button_take
 id cache_measures
 id cancel_button
+id cardView
 id center
 id center_horizontal
 id center_vertical
@@ -1926,6 +1927,10 @@ id code1
 id code2
 id code3
 id code4
+id codo1
+id codo2
+id codo3
+id codo4
 id collapseActionView
 id confirm_button
 id constraint
@@ -2022,14 +2027,14 @@ id imageBgGirlNet
 id imageCircle
 id imageCircleAccueil
 id imageView
-id imageView10
 id imageView11
 id imageView2
 id imageView4
-id imageView5
-id imageView6
-id imageView7
-id imageView9
+id imageViewCode1
+id imageViewCode2
+id imageViewCode3
+id imageViewCode4
+id imageViewCodePartie
 id info
 id invisible
 id inward
@@ -2233,7 +2238,6 @@ id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
-id textaaa
 id textinput_counter
 id textinput_error
 id textinput_helper_text
