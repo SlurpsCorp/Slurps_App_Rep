@@ -204,6 +204,10 @@
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_launcher_background.png"
     },
     {
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_pastex.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/pastex.png"
+    },
+    {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_userwaiting.xml.flat",
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_userwaiting.xml"
     },

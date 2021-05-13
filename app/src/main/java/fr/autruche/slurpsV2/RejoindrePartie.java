@@ -83,7 +83,7 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 acces = snapshot.getValue(boolean.class);
                 if (acces == true){
-                    ajout_de_joueur(selfID);
+                    ajout_de_joueur();
                 }else{
                     Toast.makeText(RejoindrePartie.this,"😢 💩La partie a commencé sans vous! ",Toast.LENGTH_LONG).show();
                 }
@@ -94,9 +94,9 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
         });
     }
 
-    private void ajout_de_joueur(String joueurID) {
-        mDatabase.getReference("parties").child(codePartie).child("listJoueur").child(joueurID).setValue(0);
-        mDatabase.getReference("parties").child(codePartie).child("listJoueur").addChildEventListener(new ChildEventListener() {
+    private void ajout_de_joueur() {
+        mDatabase.getReference("parties").child(codePartie).child("listJoueur").child(selfID).setValue(0);
+        /*mDatabase.getReference("parties").child(codePartie).child("listJoueur").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 userPlayingList.add(snapshot.getKey());
@@ -121,7 +121,7 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });
+        });*/
     }
 
     public void codePartie(){

@@ -2,13 +2,16 @@ package fr.autruche.slurpsV2;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -73,12 +76,10 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         buttonValider = (Button) findViewById(R.id.ButtonValider);
         buttonValider.setOnClickListener(this);
 
-
-
         progressBar = (ProgressBar) findViewById(R.id.progressBar2);
         progressBar.setVisibility(View.VISIBLE);
 
-        frameImg = findViewById(R.id.frameLayout1);
+        frameImg = findViewById(R.id.frameLayout2);
         gridUser = findViewById(R.id.GridLayout);
         waitUser = findViewById(R.id.waitUser);
 
@@ -118,7 +119,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         if(TimePickerMinute != 0 || TimePickerHour != 0 ){
             FirebaseDatabase.getInstance().getReference("parties/"+ codePartie + "/heurePartie").setValue(TimePickerHour);
             FirebaseDatabase.getInstance().getReference("parties/" + codePartie + "/minutePartie").setValue(TimePickerMinute);
-            FirebaseDatabase.getInstance().getReference("parties/" + codePartie + "/isAccessible").setValue(false);
+            FirebaseDatabase.getInstance().getReference("parties/" + codePartie + "/acces").setValue(false);
             Toast.makeText(CreationPartie.this,"⚠️ Partie lancée et injoignable !",Toast.LENGTH_LONG).show();
             return;
         }else{
@@ -181,10 +182,9 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         mDatabase.getReference("parties").child(codePartie).child("listJoueur").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                try{
-                    arrayOfJoueur.add(snapshot.getKey());
-                    retrieveBitmapInArray(snapshot.getKey());
-                }catch (Exception e){}
+
+                arrayOfJoueur.add(snapshot.getKey());
+                retrieveBitmapInArray(snapshot.getKey());
 
             }
 
@@ -222,7 +222,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 FirebaseStorage storage = FirebaseStorage.getInstance();
-                StorageReference pdpRef = storage.getReference().child("image_profil").child(snapshot.getValue(String.class));
+                StorageReference pdpRef = storage.getReference().child(snapshot.getValue(String.class));
                 pdpRef.getBytes(1024*1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
                     @Override
                     public void onSuccess(byte[] bytes) {
@@ -238,12 +238,17 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         });
     }
 
+
     public void refreshImageGrid() {
+
+        int cote2;
+
+        gridUser.removeViews(1, arrayOfBitmap.size()-1);
 
         for (Bitmap bitmap : arrayOfBitmap){
             //creation FrameLayout
             FrameLayout fm = new FrameLayout(gridUser.getContext());
-            int p = 60;
+            int p = 10;
             fm.setPadding(p, p, p, p);
 
             //creation Cardview
@@ -266,15 +271,22 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
                 }
             }catch (Exception e){}
 
+
+            DisplayMetrics metrics = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(metrics);
+            int px = metrics.widthPixels;
+            cote2 = px / 8;
+
             v.setImageBitmap(finalBitmap);
             v.setAdjustViewBounds(true);
-            v.setMaxHeight(cote);
-            v.setMaxWidth(cote);
+            v.setMaxHeight(cote2);
+            v.setMaxWidth(cote2);
+            //v.setForegroundGravity(Gravity.CENTER_VERTICAL);
 
             cd.addView(v);
             fm.addView(cd);
             gridUser.addView(fm);
         }
     }
-    
+
 }
