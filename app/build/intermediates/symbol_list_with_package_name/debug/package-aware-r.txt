@@ -1733,6 +1733,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable edit2
+drawable fatima
 drawable floubgaccueil
 drawable floubgaccueil2
 drawable floubgaccueil3
@@ -1744,6 +1745,7 @@ drawable ic_banner
 drawable ic_baseline_manage_accounts_24
 drawable ic_clock_black_24dp
 drawable ic_gear
+drawable ic_glass
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1787,15 +1789,15 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable plus
-drawable quiz
 drawable rectangletitrecode
-drawable slurpimg
+drawable reload
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 font brusher
 font helvetica
 font helveticabold
+font roboto_bold
 font roboto_condensed_bold
 id ALT
 id BOTTOM_END
@@ -1953,6 +1955,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id description
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -2013,6 +2016,14 @@ id hideable
 id home
 id homeAsUp
 id honorRequest
+id i1
+id i2
+id i3
+id i4
+id i5
+id i6
+id i7
+id i8
 id icon
 id icon_group
 id icon_only
@@ -2038,6 +2049,7 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id jeuBtn
 id jumpToEnd
 id jumpToStart
 id labelGroup
@@ -2050,6 +2062,8 @@ id light
 id line1
 id line3
 id linear
+id linear1
+id linear2
 id listMode
 id list_item
 id masked
@@ -2146,6 +2160,7 @@ id pseudoEditText
 id radio
 id ratio
 id rectangles
+id reload
 id repeat
 id reverseSawtooth
 id right
@@ -2235,6 +2250,8 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView2
+id textView4
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2248,6 +2265,7 @@ id textinput_suffix_text
 id time
 id timePickerHour
 id timePickerMin
+id timer
 id title
 id titleDividerNoCustom
 id title_template
@@ -2268,6 +2286,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id valider
 id version
 id view_offset_helper
 id visible
@@ -2343,6 +2362,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_accueil
 layout activity_creation_partie
+layout activity_jeu
 layout activity_join_or_create
 layout activity_menu
 layout activity_passwd_forgot
@@ -2436,6 +2456,7 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation nav_graph
 plurals mtrl_badge_content_description

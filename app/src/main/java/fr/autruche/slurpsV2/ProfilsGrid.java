@@ -21,6 +21,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -63,15 +64,21 @@ public class ProfilsGrid extends AppCompatActivity {
 
         //debug = findViewById(R.id.DEBUG);
 
-        /*
-        try {
-        write("");
-        }
-        catch (Exception e){
-            e.printStackTrace();
+
+        File testExistance= new File("historyImage");
+        if(!testExistance.exists())
+        {
+            try {
+                write("");
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
         }
 
-         */
+
+
+
 
 
 

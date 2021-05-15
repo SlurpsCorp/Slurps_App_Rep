@@ -97,4 +97,15 @@
             app:srcCompat="@drawable/avatar1" />
     </androidx.cardview.widget.CardView>
 
+    <Button
+        android:id="@+id/jeuBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Jeu"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

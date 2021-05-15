@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
     <uses-feature
         android:name="android.hardware.camera2"
         android:required="true" />
@@ -22,21 +23,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Slurps">
-        <activity android:name=".RejoindrePartie"></activity>
+        <activity android:name=".Jeu"></activity>
+
+        <activity android:name=".RejoindrePartie" />
+
         <activity android:name=".JoinOrCreate" />
+
         <activity android:name=".Menu" />
-        <activity android:name=".Profil"
-            android:requestLegacyExternalStorage="true"/>
-        <activity android:name=".ProfilsGrid"
-            android:requestLegacyExternalStorage="true"/>
+        <activity
+            android:name=".Profil"
+            android:requestLegacyExternalStorage="true" />
+        <activity
+            android:name=".ProfilsGrid"
+            android:requestLegacyExternalStorage="true" />
+
         <activity android:name=".CreationPartie" />
+
         <activity android:name=".Photo" />
+
         <activity
             android:name=".PasswdForgot"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".Register"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".Accueil"
             android:screenOrientation="portrait">
@@ -46,12 +58,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".SignIn"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -59,6 +71,9 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+
+        <service android:name=".BroadcastService"/>
     </application>
 
 </manifest>
