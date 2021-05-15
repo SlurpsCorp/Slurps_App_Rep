@@ -4,6 +4,10 @@
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/navigation_nav_graph.xml.flat",
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/navigation/nav_graph.xml"
     },
@@ -108,6 +112,10 @@
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_baseline_manage_accounts_24.png"
     },
     {
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_glass.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable-xhdpi/ic_glass.png"
+    },
+    {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_gear.png.flat",
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_gear.png"
     },
@@ -120,6 +128,10 @@
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/font/helvetica.ttf"
     },
     {
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_alex_grid.xml.flat",
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_alex_grid.xml"
     },
@@ -130,6 +142,10 @@
     {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_rectangletitrecode.png.flat",
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/rectangletitrecode.png"
+    },
+    {
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png"
     },
     {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher_background.png.flat",
@@ -156,12 +172,20 @@
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-ldpi/ic_gear.png"
     },
     {
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_slurpimg.png.flat",
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/slurpimg.png"
     },
     {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_circle.png.flat",
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/circle.png"
+    },
+    {
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_glass.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable-mdpi/ic_glass.png"
     },
     {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_baseline_manage_accounts_24.png.flat",
@@ -196,6 +220,10 @@
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_glass.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable-xxxhdpi/ic_glass.png"
+    },
+    {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_code2.png.flat",
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/code2.png"
     },
@@ -214,6 +242,10 @@
     {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_userwaiting.xml.flat",
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_userwaiting.xml"
+    },
+    {
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_glass.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable-xxhdpi/ic_glass.png"
     },
     {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_gear.png.flat",
@@ -276,6 +308,10 @@
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/banner.png"
     },
     {
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_netbgaccueil.jpg.flat",
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/netbgaccueil.jpg"
     },
@@ -306,6 +342,10 @@
     {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_rejoindre_partie.xml.flat",
         "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_rejoindre_partie.xml"
+    },
+    {
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_glass.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable-hdpi/ic_glass.png"
     },
     {
         "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",

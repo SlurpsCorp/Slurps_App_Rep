@@ -143,7 +143,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-    private void waitUserIcon() {
+    private void waitUserIcon(){
 
         FrameLayout fm = new FrameLayout(gridUser.getContext());
         fm.setPadding(interImg,interImg,interImg,interImg);
@@ -155,10 +155,8 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         // chemin image
         ImageView v = new ImageView(cd.getContext());
 
-        Drawable myDrawable = getResources().getDrawable(R.drawable.userwaiting);
-        Bitmap myLogo = ((BitmapDrawable) myDrawable).getBitmap();
-        v.setImageBitmap(Bitmap.createScaledBitmap(myLogo, coteImg, coteImg, false));
 
+        v.setImageDrawable(Drawable.createFromPath("@drawable/ic_userwaiting"));
         v.setAdjustViewBounds(true);
         v.setMinimumWidth(coteImg);
         v.setMinimumHeight(coteImg);
@@ -167,6 +165,7 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         fm.addView(cd);
 
         constraintL.addView(fm,0);
+
     }
 
     public void codePartie(){

@@ -1741,6 +1741,7 @@ drawable ic_banner
 drawable ic_baseline_manage_accounts_24
 drawable ic_clock_black_24dp
 drawable ic_gear
+drawable ic_glass
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -2436,6 +2437,7 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation nav_graph
 plurals mtrl_badge_content_description

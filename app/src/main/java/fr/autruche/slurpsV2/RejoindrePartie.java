@@ -270,7 +270,8 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
         code4.setOnKeyListener(new PinOnKeyListener(3));
     }
 
-    private void waitUserIcon() {
+    private void waitUserIcon(){
+
         FrameLayout fm = new FrameLayout(gridUser.getContext());
         fm.setPadding(interImg,interImg,interImg,interImg);
 
@@ -281,9 +282,8 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
         // chemin image
         ImageView v = new ImageView(cd.getContext());
 
-        Drawable myDrawable = getResources().getDrawable(R.drawable.userwaiting);
-        Bitmap myLogo = ((BitmapDrawable) myDrawable).getBitmap();
-        v.setImageBitmap(Bitmap.createScaledBitmap(myLogo, coteImg, coteImg, false));
+
+        v.setImageDrawable(Drawable.createFromPath("@drawable/ic_userwaiting"));
         v.setAdjustViewBounds(true);
         v.setMinimumWidth(coteImg);
         v.setMinimumHeight(coteImg);
@@ -292,6 +292,7 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
         fm.addView(cd);
 
         constraintL.addView(fm,0);
+
     }
 
 
