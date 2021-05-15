@@ -287,9 +287,9 @@ public class Jeu extends AppCompatActivity {
             {
                 case 1: i8.setTextColor(Color.parseColor("#FFD700"));
                 break;
-                case 2: i8.setTextColor(Color.parseColor("#614e1a"));
+                case 2: i8.setTextColor(Color.parseColor("#C0C0C0"));
                 break;
-                case 3: i8.setTextColor(Color.parseColor("#C0C0C0"));
+                case 3: i8.setTextColor(Color.parseColor("#614e1a"));
                 break;
 
             }
