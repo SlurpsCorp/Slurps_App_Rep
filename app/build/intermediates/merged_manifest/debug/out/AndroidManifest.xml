@@ -34,6 +34,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Slurps" >
+        <activity android:name="fr.autruche.slurpsV2.Jeu" />
         <activity android:name="fr.autruche.slurpsV2.RejoindrePartie" />
         <activity android:name="fr.autruche.slurpsV2.JoinOrCreate" />
         <activity android:name="fr.autruche.slurpsV2.Menu" />
@@ -73,6 +74,8 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <service android:name="fr.autruche.slurpsV2.BroadcastService" />
 
         <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"

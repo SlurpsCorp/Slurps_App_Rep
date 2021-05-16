@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -18,12 +19,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 
 public class ProfilsGrid extends AppCompatActivity {
@@ -33,6 +38,7 @@ public class ProfilsGrid extends AppCompatActivity {
     private int c;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,59 +69,22 @@ public class ProfilsGrid extends AppCompatActivity {
 
         //debug = findViewById(R.id.DEBUG);
 
-        /*
-        try {
-        write("");
+
+        if(Files.exists(Paths.get("historyImage")))
+        {
+            try {
+                write("");
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
         }
-        catch (Exception e){
-            e.printStackTrace();
-        }
-
-         */
-
-
-
-
-
-
 
 
         refresh();
 
         createOnClickPhotoBtn();
     }
-    /*
-    public void setImageView(int i) {
-
-        //creation FrameLayout
-        FrameLayout fm = new FrameLayout(gridLayout1.getContext());
-        int p = 60;
-        fm.setPadding(p, p, p, p);
-        //FrameLayout.LayoutParams params =(FrameLayout.LayoutParams) fm.getLayoutParams();
-        //params.setMargins(15,15,15,15);
-        //fm.setLayoutParams(params);
-
-        //creation Cardview
-        CardView cd = new CardView(fm.getContext());
-        cd.setRadius(500);
-        //cd.setPadding(15,15,15,15);
-
-        // chemin image
-        ImageView v = new ImageView(cd.getContext());
-        v.setImageResource(i);
-        v.setAdjustViewBounds(true);
-        v.setMaxHeight(c);
-        v.setMaxWidth(c);
-
-        //v.setPadding(15,15,15,15);
-
-        cd.addView(v);
-        fm.addView(cd);
-        gridLayout1.addView(fm);
-    }
-
-     */
-
 
     public void setImageViewFromPath(String path) {
         //creation FrameLayout

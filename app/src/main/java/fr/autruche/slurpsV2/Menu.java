@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Menu extends AppCompatActivity implements View.OnClickListener {
     private ImageView profilImage;
+    private Button jeu;
 
     private TextView playTextView, creerTextView;
 
@@ -24,6 +26,15 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        jeu = findViewById(R.id.jeuBtn);
+        jeu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent viewJeu = new Intent(getApplicationContext(),Jeu.class);
+                startActivity(viewJeu);
+
+            }
+        });
 
 
         this.profilImage = (ImageView) findViewById(R.id.ProfilImage);
