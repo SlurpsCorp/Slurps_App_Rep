@@ -6,24 +6,40 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.FileOutputStream;
 
 public class SignIn extends AppCompatActivity implements View.OnClickListener{
 
     private FirebaseAuth mAuth;
+    private FirebaseDatabase mDatabase;
     private EditText editTextEmail, editTextPassword;
     private Button buttonConnexion;
     private TextView textPasswdForgot;
@@ -38,7 +54,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_sign_in);
 
         mAuth = FirebaseAuth.getInstance();
-
+        mDatabase = FirebaseDatabase.getInstance();
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
 
         editTextPassword = (EditText) findViewById(R.id.editTextPasswords);
@@ -63,6 +79,9 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
         switch(v.getId()){
             case R.id.buttonConnexion:
                 buttonConnexion();
+                Toast.makeText(this, FirebaseAuth.getInstance().getCurrentUser().getUid(), Toast.LENGTH_SHORT).show();
+                retrieveBitmapInArray(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
                 break;
 
             case R.id.textPasswdForgot:
@@ -116,14 +135,13 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
                         editor.putString("password", "");
                         editor.putBoolean("isChecked", false);
                         editor.commit();
-
                     }
 
                     //////////////////redirect play view /////////////////////
                     Intent openPlay = new Intent(getApplicationContext(), Menu.class);
                     progressBar.setVisibility(View.GONE);
                     startActivity(openPlay);
-                    finish();
+                    //finish();
 
 
                 }else{
@@ -151,5 +169,66 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
         startActivity(openPasswdForgot);
 
     }
+
+    public void retrieveBitmapInArray(String userId){
+        mDatabase.getReference("Users").child(userId).child("pdp").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                FirebaseStorage storage = FirebaseStorage.getInstance();
+                StorageReference pdpRef = storage.getReference().child(snapshot.getValue(String.class));
+                pdpRef.getBytes(1024*1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                    @Override
+                    public void onSuccess(byte[] bytes) {
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0 , bytes.length);
+                        saveToGallery(bitmap);
+                        //Toast.makeText(SignIn.this, "PHOTO DL", Toast.LENGTH_SHORT).show();
+
+                        finish();
+                    }
+                });
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+
+    private void saveToGallery(Bitmap bitmap){
+
+        FileOutputStream outputStream=null;
+        java.io.File file = Environment.getExternalStorageDirectory();
+        java.io.File dir = new java.io.File(file.getAbsolutePath() + "/ASlurps2");
+        dir.mkdirs();
+
+        String filename = "ProfileImage.png";
+
+        java.io.File outFile = new java.io.File(dir, filename);
+
+        if(outFile == null)
+            Log.i("TAG1","outfile error");
+
+        try{
+            outputStream = new FileOutputStream(outFile);
+        }catch (Exception e){
+            Log.e("TAG1","outPutStream error");
+            //Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+        bitmap.compress(Bitmap.CompressFormat.PNG,100,outputStream);
+
+        //Toast.makeText(this, "Image saved to internal!", Toast.LENGTH_SHORT).show();
+        try{
+            outputStream.flush();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        try{
+            outputStream.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
 
 }

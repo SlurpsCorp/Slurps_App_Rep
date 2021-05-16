@@ -188,7 +188,9 @@ public class ProfilsGrid extends AppCompatActivity {
         gridLayout1.removeViews(1,gridLayout1.getChildCount()-1);
         int n = 0;
         while (!getLine(n).equals("empty")) {
-            setImageViewFromPath(getLine(n));
+            try {
+                setImageViewFromPath(getLine(n));
+            }catch(Exception e) {}
             n++;
         }
 

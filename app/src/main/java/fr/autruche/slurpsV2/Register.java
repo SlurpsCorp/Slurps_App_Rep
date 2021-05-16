@@ -3,7 +3,9 @@ package fr.autruche.slurpsV2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -35,12 +37,12 @@ import java.util.concurrent.TimeUnit;
 public class Register extends AppCompatActivity implements View.OnClickListener{
 
     private FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
+    private FirebaseDatabase mDatabase;
     private EditText editTextEmail, editTextPassword, editTextPasswords2;
     private Button buttonRegister;
     private ProgressBar progressBar;
     private String pseudoDefault;
-
+    private SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_register);
 
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference("Users");
+        mDatabase = FirebaseDatabase.getInstance();
 
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
 
@@ -74,7 +76,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         String email = editTextEmail.getText().toString().trim();
         String passwd = editTextPassword.getText().toString().trim();
         String passwd2 = editTextPasswords2.getText().toString().trim();
-        String pseudo = retrievePseudo();
+        retrievePseudo();
 
         if(email.isEmpty()){
             editTextEmail.setError("⚠️ Email obligatoire!");
@@ -108,62 +110,66 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
 
         progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email,passwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                         if(task.isSuccessful()){
-                             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                             User user = new User(pseudo, email);
-                             mDatabase.child(mAuth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                 @Override
-                                 public void onComplete(@NonNull Task<Void> task) {
-                                     if(task.isSuccessful()){
+                    sp = getSharedPreferences("emailSaved", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sp.edit();
 
-                                         //////////////////redirect play view /////////////////////
-                                         Intent openPlay = new Intent(getApplicationContext(), SignIn.class);
-                                         progressBar.setVisibility(View.GONE);
-                                         startActivity(openPlay);
-                                         finish();
+                    editor.putString("email", email);
+                    editor.putString("password", passwd);
+                    editor.putBoolean("isChecked", true);
+                    editor.commit();
+
+                    User user = new User(pseudoDefault, email);
+                    mDatabase.getReference("Users").child(mAuth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+
+                                //////////////////redirect play view /////////////////////
+                                Intent signIn = new Intent(getApplicationContext(), SignIn.class);
+                                progressBar.setVisibility(View.GONE);
+                                startActivity(signIn);
+                                finish();
 
 
-                                     }else{
-                                         Toast.makeText(Register.this,"❌ Une erreur est survenue! Veuillez réessayer!ecrire database",Toast.LENGTH_LONG).show();
-                                         progressBar.setVisibility(View.GONE);
-                                     }
-
-                                 }
-                             });
-                             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                         }else{
-                             Toast.makeText(Register.this,"❌ Une erreur est survenue! Veuillez réessayer!register",Toast.LENGTH_LONG).show();
-                             progressBar.setVisibility(View.GONE);
-                         }
-                    }
-                });
+                            }else{
+                                Toast.makeText(Register.this,"❌ Une erreur est survenue! Veuillez réessayer!ecrire database",Toast.LENGTH_LONG).show();
+                                progressBar.setVisibility(View.GONE);
+                            }
+                        }
+                    });
+                    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                }else{
+                    Toast.makeText(Register.this,"❌ Une erreur est survenue! Veuillez réessayer!register",Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+                }
+            }
+        });
 
     }
 
-    public String retrievePseudo(){
+    public void retrievePseudo(){
 
         Random rand = new Random();
         String pseudoNum = String.valueOf(rand.nextInt(478) + 1);
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("pseudoDefault");
+        DatabaseReference ref = mDatabase.getReference().child("pseudoDefault");
         ref.child(pseudoNum).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
                     Log.e("firebase", "Error getting data", task.getException());
-                    //Toast.makeText(Register.this,"❌AIE PAS DE PSEUDO",Toast.LENGTH_LONG).show();
                     pseudoDefault = "Crasseux";
-                    Toast.makeText(Register.this,"Pseudo: " + pseudoDefault,Toast.LENGTH_LONG).show();
+                    //Toast.makeText(Register.this,"Pseudo: " + pseudoDefault,Toast.LENGTH_LONG).show();
                 }else {
                     pseudoDefault = String.valueOf(task.getResult().getValue());
-                    Toast.makeText(Register.this,"Pseudo: " + pseudoDefault,Toast.LENGTH_LONG).show();
+                    Toast.makeText(Register.this,"Ton pseudo: " + pseudoDefault,Toast.LENGTH_LONG).show();
                 }
             }
         });
-
-        return pseudoDefault;
     }
 }

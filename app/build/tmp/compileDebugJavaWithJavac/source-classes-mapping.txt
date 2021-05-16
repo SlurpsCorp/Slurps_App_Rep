@@ -33,6 +33,8 @@ fr/autruche/slurpsV2/UserForScore.java
 fr/autruche/slurpsV2/SignIn.java
  fr.autruche.slurpsV2.SignIn
  fr.autruche.slurpsV2.SignIn$1
+ fr.autruche.slurpsV2.SignIn$2
+ fr.autruche.slurpsV2.SignIn$2$1
 fr/autruche/slurpsV2/Jeu.java
  fr.autruche.slurpsV2.Jeu
  fr.autruche.slurpsV2.Jeu$1
