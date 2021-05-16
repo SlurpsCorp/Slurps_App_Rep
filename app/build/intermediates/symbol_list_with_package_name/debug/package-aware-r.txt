@@ -2067,6 +2067,7 @@ id line3
 id linear
 id linear1
 id linear2
+id linearDialog
 id listMode
 id list_item
 id masked

@@ -2,6 +2,8 @@ fr/autruche/slurpsV2/ProfilsGrid.java
  fr.autruche.slurpsV2.ProfilsGrid
  fr.autruche.slurpsV2.ProfilsGrid$1
  fr.autruche.slurpsV2.ProfilsGrid$2
+ fr.autruche.slurpsV2.ProfilsGrid$2$1
+ fr.autruche.slurpsV2.ProfilsGrid$2$2
 fr/autruche/slurpsV2/CreationPartie.java
  fr.autruche.slurpsV2.CreationPartie
  fr.autruche.slurpsV2.CreationPartie$1
@@ -57,7 +59,3 @@ fr/autruche/slurpsV2/RejoindrePartie.java
  fr.autruche.slurpsV2.RejoindrePartie$PinTextWatcher
 fr/autruche/slurpsV2/BuildConfig.java
  fr.autruche.slurpsV2.BuildConfig
-fr/autruche/slurpsV2/OnAttach.java
- fr.autruche.slurpsV2.OnAttach
-fr/autruche/slurpsV2/DialogBox.java
- fr.autruche.slurpsV2.DialogBox

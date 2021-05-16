@@ -14,22 +14,18 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.GridLayout;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.DialogFragment;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -297,11 +293,12 @@ public class ProfilsGrid extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 BottomSheetDialog dialog = new BottomSheetDialog(ProfilsGrid.this);
-                View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_dialog,(RelativeLayout)findViewById(R.id.relativeDialog));
+                View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_dialog,(LinearLayout)findViewById(R.id.linearDialog));
                 bottomSheetView.findViewById(R.id.PhotoBtn).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         openAppareilPhoto();
+                        dialog.dismiss();
                     }
                 });
 
@@ -309,8 +306,11 @@ public class ProfilsGrid extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         openLibrairie();
+                        dialog.dismiss();
                     }
                 });
+                dialog.setContentView(bottomSheetView);
+                dialog.show();
             }
         });
     }
