@@ -12,16 +12,22 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.DialogFragment;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -36,6 +42,8 @@ public class ProfilsGrid extends AppCompatActivity {
     private GridLayout gridLayout1;
     private ImageView addCircle;
     private int c;
+    private static final int REQUEST_IMAGE_CAPTURE = 101;
+
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -81,7 +89,11 @@ public class ProfilsGrid extends AppCompatActivity {
         }
 
 
-        refresh();
+        try {
+            refresh();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         createOnClickPhotoBtn();
     }
@@ -133,7 +145,7 @@ public class ProfilsGrid extends AppCompatActivity {
         photoIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveToGallery(photoIV);
+                saveToGalleryImageView(photoIV);
                 finish();
 
             }
@@ -143,9 +155,45 @@ public class ProfilsGrid extends AppCompatActivity {
 
     }
 
-    private void saveToGallery(ImageView picture){
+    private void saveToGalleryImageView(ImageView picture){
         BitmapDrawable bitmapDrawable = (BitmapDrawable) picture.getDrawable();
         Bitmap bitmap = bitmapDrawable.getBitmap();
+
+        FileOutputStream outputStream=null;
+        java.io.File file = Environment.getExternalStorageDirectory();
+        java.io.File dir = new java.io.File(file.getAbsolutePath() + "/ASlurps2");
+        dir.mkdirs();
+
+        String filename = "ProfileImage.png";
+
+        java.io.File outFile = new java.io.File(dir, filename);
+
+        if(outFile == null)
+            Log.i("TAG1","outfile error");
+
+        try{
+            outputStream = new FileOutputStream(outFile);
+        }catch (Exception e){
+            Log.e("TAG1","outPutStream error");
+            //Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+        bitmap.compress(Bitmap.CompressFormat.PNG,100,outputStream);
+
+        //Toast.makeText(this, "Image saved to internal!", Toast.LENGTH_SHORT).show();
+        try{
+            outputStream.flush();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        try{
+            outputStream.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void saveToGalleryBitmap(Bitmap bitmap){
 
         FileOutputStream outputStream=null;
         java.io.File file = Environment.getExternalStorageDirectory();
@@ -188,7 +236,11 @@ public class ProfilsGrid extends AppCompatActivity {
         gridLayout1.removeViews(1,gridLayout1.getChildCount()-1);
         int n = 0;
         while (!getLine(n).equals("empty")) {
-            setImageViewFromPath(getLine(n));
+            try {
+                setImageViewFromPath(getLine(n));
+            }catch(Exception e)
+            {}
+
             n++;
         }
 
@@ -244,13 +296,36 @@ public class ProfilsGrid extends AppCompatActivity {
         addCircle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //acces a la galerie du telehphone
-                Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(galleryIntent, 1);
+                BottomSheetDialog dialog = new BottomSheetDialog(ProfilsGrid.this);
+                View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_dialog,(RelativeLayout)findViewById(R.id.relativeDialog));
+                bottomSheetView.findViewById(R.id.PhotoBtn).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        openAppareilPhoto();
+                    }
+                });
 
-
+                bottomSheetView.findViewById(R.id.BibliothequeBtn).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        openLibrairie();
+                    }
+                });
             }
         });
+    }
+
+    public void openAppareilPhoto(){
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        if(takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    public void openLibrairie(){
+        Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(galleryIntent, 1);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data)
@@ -283,12 +358,13 @@ public class ProfilsGrid extends AppCompatActivity {
             }
 
         }
-        else
-        {
-            Toast.makeText(this,"Aucune image selectionné", Toast.LENGTH_LONG).show();
+        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            saveToGalleryBitmap(imageBitmap);
         }
-
         refresh();
-
     }
+
+
 }

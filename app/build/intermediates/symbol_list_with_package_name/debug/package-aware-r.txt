@@ -64,6 +64,7 @@ animator mtrl_fab_transformation_sheet_expand_spec
 array com_google_android_gms_fonts_certs
 array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
+array photoChoix
 array preloaded_fonts
 attr action
 attr actionBarDivider
@@ -1802,6 +1803,7 @@ font roboto_condensed_bold
 id ALT
 id BOTTOM_END
 id BOTTOM_START
+id BibliothequeBtn
 id ButtonAcceder
 id ButtonValider
 id CTRL
@@ -1813,6 +1815,7 @@ id GridLayout1
 id Incription
 id META
 id NO_DEBUG
+id PhotoBtn
 id ProfilImage
 id RejoindreTextView
 id SHIFT
@@ -2389,6 +2392,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout layout_dialog
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider

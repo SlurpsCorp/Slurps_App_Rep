@@ -51,7 +51,6 @@ public class Profil extends AppCompatActivity {
             {
                 Intent viewProfilGrid = new Intent(getApplicationContext(), ProfilsGrid.class);
                 startActivity(viewProfilGrid);
-
             }
         });
 

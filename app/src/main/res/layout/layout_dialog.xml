@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeDialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <Button
+        android:id="@+id/PhotoBtn"
+        android:layout_width="220dp"
+        android:layout_height="70dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/roboto_condensed_bold"
+        android:text="APPAREIL PHOTO"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:rippleColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/BibliothequeBtn"
+        android:layout_width="220dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/PhotoBtn"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/roboto_condensed_bold"
+        android:text="BIBLIOTHÈQUE"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:rippleColor="#FFFFFF" />
+</RelativeLayout>

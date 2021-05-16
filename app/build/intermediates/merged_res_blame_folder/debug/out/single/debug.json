@@ -1,394 +1,398 @@
 [
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_banner.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_banner.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_register.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\activity_register.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_manage_accounts_24.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_manage_accounts_24.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/navigation_nav_graph.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/navigation/nav_graph.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_menu.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\activity_menu.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_plus.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/plus.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-hdpi/ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_floubgaccueil.jpeg.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\floubgaccueil.jpeg"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/xml_provider_paths.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/xml/provider_paths.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\font_roboto_bold.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\font\\roboto_bold.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_banner.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-mdpi/ic_banner.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_passwd_forgot.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\activity_passwd_forgot.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_creation_partie.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_creation_partie.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_banner2.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\banner2.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rectangletitrecode.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\rectangletitrecode.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_banner.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_banner.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_edit2.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\edit2.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_register.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_register.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_fatima.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/fatima.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_banner.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_banner.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_baseline_manage_accounts_24.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-ldpi/ic_baseline_manage_accounts_24.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_banner.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_banner.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_edit2.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-anydpi-v24/edit2.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_floubgaccueil3.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\floubgaccueil3.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_gear.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_gear.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_userwaiting.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_userwaiting.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_code1.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/code1.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_banner.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_banner.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher_background.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\font_helvetica.ttf.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\font\\helvetica.ttf"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_userwaiting.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-mdpi/ic_userwaiting.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_gear.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_gear.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_reload.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/reload.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_code4.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\code4.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_baseline_manage_accounts_24.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_baseline_manage_accounts_24.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_glass.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable-mdpi\\ic_glass.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_userwaiting.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-hdpi/ic_userwaiting.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_rejoindre_partie.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\activity_rejoindre_partie.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_layout_dialog.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/layout_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_gear.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_gear.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/font_brusher.ttf.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/font/brusher.ttf"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_passwd_forgot.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_passwd_forgot.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_userwaiting.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_userwaiting.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_floubgaccueil.jpeg.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/floubgaccueil.jpeg"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_userwaiting.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_userwaiting.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\xml_provider_paths.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\xml\\provider_paths.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_gear.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-mdpi/ic_gear.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_avatar1.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/avatar1.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_plus.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\plus.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-mdpi/ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_photo.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\activity_photo.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_profil.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_profil.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_launcher_background.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-ldpi/ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_userwaiting.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_userwaiting.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_gear.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/gear.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_baseline_manage_accounts_24.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_manage_accounts_24.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_floubgaccueil2.jpeg.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/floubgaccueil2.jpeg"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_profils_grid.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\activity_profils_grid.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_glass.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable-hdpi\\ic_glass.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_userwaiting.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_userwaiting.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_code2.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\code2.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_gear.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_gear.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_glass.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable-xxhdpi\\ic_glass.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/font_roboto_bold.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/font/roboto_bold.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\font_helveticabold.ttf.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\font\\helveticabold.ttf"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_rejoindre_partie.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_rejoindre_partie.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_floubgprofil.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\floubgprofil.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_banner.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-ldpi/ic_banner.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_gear.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_gear.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_code3.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/code3.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_avatar1.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\avatar1.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_jeu.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_jeu.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_baseline_manage_accounts_24.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_baseline_manage_accounts_24.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_banner.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_banner.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_jeu.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\activity_jeu.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_gear.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_gear.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\navigation_nav_graph.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\navigation\\nav_graph.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_userwaiting.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-ldpi/ic_userwaiting.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_gear.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_gear.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_manage_accounts_24.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_manage_accounts_24.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_accueil.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_accueil.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_code1.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\code1.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_baseline_manage_accounts_24.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_baseline_manage_accounts_24.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_banner.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\banner.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_join_or_create.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_join_or_create.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_banner.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\banner.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_baseline_manage_accounts_24.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_baseline_manage_accounts_24.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_baseline_manage_accounts_24.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_baseline_manage_accounts_24.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_code4.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/code4.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_baseline_manage_accounts_24.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_baseline_manage_accounts_24.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_baseline_manage_accounts_24.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-hdpi/ic_baseline_manage_accounts_24.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_gear.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-hdpi/ic_gear.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_baseline_manage_accounts_24.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_baseline_manage_accounts_24.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_userwaiting.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_userwaiting.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_glass.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable-xhdpi\\ic_glass.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_baseline_manage_accounts_24.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_baseline_manage_accounts_24.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_join_or_create.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\activity_join_or_create.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_glass.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable-xhdpi/ic_glass.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\font_brusher.ttf.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\font\\brusher.ttf"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_floubgprofil.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/floubgprofil.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_gear.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_gear.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/font_helvetica.ttf.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/font/helvetica.ttf"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_banner.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_banner.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_rectangletitrecode.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/rectangletitrecode.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_netbgaccueil2.jpg.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\netbgaccueil2.jpg"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_netbgaccueil2.jpg.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/netbgaccueil2.jpg"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_photo.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_photo.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_banner.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/banner.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_gear.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-ldpi/ic_gear.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_code3.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\code3.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_circle.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/circle.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_userwaiting.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_userwaiting.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_glass.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable-mdpi/ic_glass.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_gear.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_gear.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_banner.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_banner.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_baseline_manage_accounts_24.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-mdpi/ic_baseline_manage_accounts_24.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_netbgaccueil.jpg.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\netbgaccueil.jpg"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_profils_grid.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_profils_grid.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_creation_partie.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\activity_creation_partie.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_reload.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\reload.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_glass.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable-xxxhdpi/ic_glass.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_floubgaccueil2.jpeg.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\floubgaccueil2.jpeg"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_code2.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/code2.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_userwaiting.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_userwaiting.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_glass.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable-xxhdpi/ic_glass.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\font_roboto_condensed_bold.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\font\\roboto_condensed_bold.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_floubgaccueil3.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/floubgaccueil3.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_gear.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\gear.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_launcher_background.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_fatima.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\fatima.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/font_roboto_condensed_bold.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/font/roboto_condensed_bold.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_userwaiting.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_userwaiting.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_profil.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\activity_profil.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_banner.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_banner.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_userwaiting.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_userwaiting.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_userwaiting.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_userwaiting.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_accueil.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\activity_accueil.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_in.xml.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\activity_sign_in.xml"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_banner.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/banner.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_netbgaccueil.jpg.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/netbgaccueil.jpg"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_banner.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_banner.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable_banner2.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable/banner2.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\circle.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/font_helveticabold.ttf.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/font/helveticabold.ttf"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_glass.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_glass.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_menu.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_menu.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/layout_activity_sign_in.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/layout/activity_sign_in.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_gear.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_gear.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_glass.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/drawable-hdpi/ic_glass.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_gear.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_gear.png"
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_banner.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_banner.png"
+    },
+    {
+        "merged": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_banner.png.flat",
+        "source": "/Users/elois_ltrn/AndroidStudioProjects/Slurps_App_git_elo/app/build/generated/res/pngs/debug/drawable-hdpi/ic_banner.png"
     }
 ]
