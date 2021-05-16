@@ -43,16 +43,14 @@ public class BroadcastService extends Service {
                 Log.i(TAG,"Countdown seconds remaining:" + millisUntilFinished / 1000);
                 intent.putExtra("countdown",millisUntilFinished);
                 sendBroadcast(intent);
-                if(millisUntilFinished < 1000){
-                    //push +action;
-                    sendNotif("TEMPS ÉCOULÉ ⏳","Le temps t'a rattrapé connard ! 🖕");
-                    Jeu.setDefiFini();
-
-                }
             }
 
             @Override
             public void onFinish() {
+                sendNotif("TEMPS ÉCOULÉ ⏳","Le temps t'a rattrapé connard ! 🖕");
+                Jeu.setDefiFini();
+                stopSelf();
+
             }
         };
         countDownTimer.start();
@@ -79,5 +77,9 @@ public class BroadcastService extends Service {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(BroadcastService.this);
         notificationManager.notify(1,builder.build());
+    }
+
+    public void stopTimer(){
+        countDownTimer.cancel();
     }
 }

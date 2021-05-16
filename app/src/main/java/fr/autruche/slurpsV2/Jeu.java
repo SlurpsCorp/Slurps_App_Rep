@@ -3,9 +3,7 @@ package fr.autruche.slurpsV2;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.res.ResourcesCompat;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -13,8 +11,6 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.media.Image;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -27,16 +23,10 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Locale;
-
 import static android.os.Build.VERSION_CODES.O;
 import static android.view.ViewGroup.*;
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static fr.autruche.slurpsV2.R.font.brusher;
 import static fr.autruche.slurpsV2.R.font.roboto_condensed_bold;
 
 public class Jeu extends AppCompatActivity {
@@ -52,6 +42,10 @@ public class Jeu extends AppCompatActivity {
     LinearLayout i22, i52;
     ImageView i42;
     TextView i62,i72,i82;
+
+    Intent timerDefi;
+
+
 
     public static long TIME;
     private String TAG = "TIMER-TAG";
@@ -72,13 +66,18 @@ public class Jeu extends AppCompatActivity {
         setOnClickListenerReload();
         setOnClickListenerButton();
 
-
         //Création de la fausse lite de joueurs
 
         for(int i=0; i< 10; i++)
         {
             joueursListe.add(new UserForScore(i));
         }
+
+
+        //verif
+        timerDefi  = new Intent(this, BroadcastService.class);
+        if(timerDefi != null)
+            Log.i("LOOOOOOOOOOG","INITIALISATIOOOOOOOOOOOOOOOOOOOOON)");
 
 
         //refresh affichage
@@ -153,8 +152,10 @@ public class Jeu extends AppCompatActivity {
         reload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(defiDisplayed)
+                if(defiDisplayed) {
                     setPasDeDefi();
+                    stopTimer(timerDefi);
+                }
                 else
                     setDefi("Niquer des mères");
 
@@ -185,12 +186,13 @@ public class Jeu extends AppCompatActivity {
     private void setDefi(String pDescription)
     {
         valider.setEnabled(true);
-        defiDisplayed=true;
+
         description.setText(pDescription);
         timer.setVisibility(View.VISIBLE);
         valider.setVisibility(View.VISIBLE);
-
         startTimer(10000);
+
+        defiDisplayed=true;
     }
 
     private void refresh()
@@ -367,6 +369,7 @@ public class Jeu extends AppCompatActivity {
         valider.setEnabled(false);
         valider.setBackgroundColor(0xA1DFCECE);
         valider.setTextColor(Color.parseColor("#777777"));
+
     }
 
 
@@ -375,9 +378,13 @@ public class Jeu extends AppCompatActivity {
     private void startTimer(long time)
     {
         TIME = time;
-        Intent intent = new Intent(this, BroadcastService.class);
-        startService(intent);
+        startService(timerDefi);
         Log.i(TAG,"Started Service");
+    }
+
+    private void stopTimer(Intent timer)
+    {
+        stopService(timer);
     }
 
 
