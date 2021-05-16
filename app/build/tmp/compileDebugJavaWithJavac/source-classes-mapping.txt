@@ -15,27 +15,29 @@ fr/autruche/slurpsV2/Photo.java
  fr.autruche.slurpsV2.Photo
 fr/autruche/slurpsV2/Partie.java
  fr.autruche.slurpsV2.Partie
-fr/autruche/slurpsV2/Profil.java
- fr.autruche.slurpsV2.Profil
- fr.autruche.slurpsV2.Profil$1
- fr.autruche.slurpsV2.Profil$2
+fr/autruche/slurpsV2/Menu.java
+ fr.autruche.slurpsV2.Menu
+ fr.autruche.slurpsV2.Menu$1
+ fr.autruche.slurpsV2.Menu$2
+ fr.autruche.slurpsV2.Menu$3
+ fr.autruche.slurpsV2.Menu$4
 fr/autruche/slurpsV2/User.java
  fr.autruche.slurpsV2.User
 fr/autruche/slurpsV2/Accueil.java
  fr.autruche.slurpsV2.Accueil
-fr/autruche/slurpsV2/BuildConfig.java
- fr.autruche.slurpsV2.BuildConfig
+fr/autruche/slurpsV2/BroadcastService.java
+ fr.autruche.slurpsV2.BroadcastService
+ fr.autruche.slurpsV2.BroadcastService$1
 fr/autruche/slurpsV2/UserForScore.java
  fr.autruche.slurpsV2.UserForScore
 fr/autruche/slurpsV2/SignIn.java
  fr.autruche.slurpsV2.SignIn
  fr.autruche.slurpsV2.SignIn$1
-fr/autruche/slurpsV2/RejoindrePartie.java
- fr.autruche.slurpsV2.RejoindrePartie
- fr.autruche.slurpsV2.RejoindrePartie$1
- fr.autruche.slurpsV2.RejoindrePartie$2
- fr.autruche.slurpsV2.RejoindrePartie$PinOnKeyListener
- fr.autruche.slurpsV2.RejoindrePartie$PinTextWatcher
+fr/autruche/slurpsV2/Jeu.java
+ fr.autruche.slurpsV2.Jeu
+ fr.autruche.slurpsV2.Jeu$1
+ fr.autruche.slurpsV2.Jeu$2
+ fr.autruche.slurpsV2.Jeu$3
 fr/autruche/slurpsV2/PasswdForgot.java
  fr.autruche.slurpsV2.PasswdForgot
  fr.autruche.slurpsV2.PasswdForgot$1
@@ -43,17 +45,15 @@ fr/autruche/slurpsV2/JoinOrCreate.java
  fr.autruche.slurpsV2.JoinOrCreate
  fr.autruche.slurpsV2.JoinOrCreate$1
  fr.autruche.slurpsV2.JoinOrCreate$2
-fr/autruche/slurpsV2/BroadcastService.java
- fr.autruche.slurpsV2.BroadcastService
- fr.autruche.slurpsV2.BroadcastService$1
-fr/autruche/slurpsV2/Jeu.java
- fr.autruche.slurpsV2.Jeu
- fr.autruche.slurpsV2.Jeu$1
- fr.autruche.slurpsV2.Jeu$2
- fr.autruche.slurpsV2.Jeu$3
-fr/autruche/slurpsV2/Menu.java
- fr.autruche.slurpsV2.Menu
- fr.autruche.slurpsV2.Menu$1
- fr.autruche.slurpsV2.Menu$2
- fr.autruche.slurpsV2.Menu$3
- fr.autruche.slurpsV2.Menu$4
+fr/autruche/slurpsV2/Profil.java
+ fr.autruche.slurpsV2.Profil
+ fr.autruche.slurpsV2.Profil$1
+ fr.autruche.slurpsV2.Profil$2
+fr/autruche/slurpsV2/RejoindrePartie.java
+ fr.autruche.slurpsV2.RejoindrePartie
+ fr.autruche.slurpsV2.RejoindrePartie$1
+ fr.autruche.slurpsV2.RejoindrePartie$2
+ fr.autruche.slurpsV2.RejoindrePartie$PinOnKeyListener
+ fr.autruche.slurpsV2.RejoindrePartie$PinTextWatcher
+fr/autruche/slurpsV2/BuildConfig.java
+ fr.autruche.slurpsV2.BuildConfig

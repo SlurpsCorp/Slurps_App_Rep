@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.CountDownTimer;
 import android.os.IBinder;
@@ -73,7 +74,7 @@ public class BroadcastService extends Service {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(BroadcastService.this, "my notif")
                 .setSmallIcon(R.drawable.ic_glass) //https://stackoverflow.com/questions/30795431/android-push-notifications-icon-not-displaying-in-notification-white-square-sh
                 .setContentTitle(titre)
-                .setContentText(message)
+                .setContentText(message).setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(BroadcastService.this);
         notificationManager.notify(1,builder.build());
