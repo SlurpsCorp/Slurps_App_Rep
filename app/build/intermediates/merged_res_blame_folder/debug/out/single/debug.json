@@ -60,6 +60,10 @@
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_baseline_manage_accounts_24.xml"
     },
     {
+        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
@@ -68,16 +72,24 @@
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_baseline_manage_accounts_24.png"
     },
     {
-        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_banner.png.flat",
-        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_banner.png"
-    },
-    {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_banner.png.flat",
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_banner.png"
     },
     {
+        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_banner.png.flat",
+        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_banner.png"
+    },
+    {
+        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_glass.png.flat",
+        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable-xhdpi\\ic_glass.png"
+    },
+    {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_join_or_create.xml.flat",
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\activity_join_or_create.xml"
+    },
+    {
+        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_alex_grid.xml.flat",
+        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\layout\\activity_alex_grid.xml"
     },
     {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_floubgaccueil3.png.flat",
@@ -90,6 +102,10 @@
     {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_banner.xml.flat",
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_banner.xml"
+    },
+    {
+        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_quiz.jpg.flat",
@@ -124,8 +140,16 @@
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_glass.png.flat",
+        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable-mdpi\\ic_glass.png"
+    },
+    {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_banner.png.flat",
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_banner.png"
+    },
+    {
+        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_rejoindre_partie.xml.flat",
@@ -232,6 +256,10 @@
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
     },
     {
+        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_userwaiting.png.flat",
+        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\userwaiting.png"
+    },
+    {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_baseline_manage_accounts_24.png.flat",
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_manage_accounts_24.png"
     },
@@ -240,12 +268,24 @@
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\gear.png"
     },
     {
+        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_glass.png.flat",
+        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable-hdpi\\ic_glass.png"
+    },
+    {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_userwaiting.png.flat",
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_userwaiting.png"
     },
     {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_code2.png.flat",
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\code2.png"
+    },
+    {
+        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_glass.png.flat",
+        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable-xxhdpi\\ic_glass.png"
     },
     {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_userwaiting.png.flat",
@@ -284,12 +324,20 @@
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_banner.png"
     },
     {
+        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pastex.png.flat",
+        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\pastex.png"
+    },
+    {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle.png.flat",
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable\\circle.png"
     },
     {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\navigation_nav_graph.xml.flat",
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\navigation\\nav_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_glass.png.flat",
+        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_glass.png"
     },
     {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
@@ -310,6 +358,10 @@
     {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_manage_accounts_24.png.flat",
         "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_manage_accounts_24.png"
+    },
+    {
+        "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\atrin\\AndroidStudioProjects\\Slurps_App_elo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_gear.png.flat",
