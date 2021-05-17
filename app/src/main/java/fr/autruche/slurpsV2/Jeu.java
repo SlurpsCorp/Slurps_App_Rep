@@ -30,9 +30,13 @@ import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Locale;
+import java.util.Random;
+
 import static android.os.Build.VERSION_CODES.O;
 import static android.view.ViewGroup.*;
 import static fr.autruche.slurpsV2.R.font.roboto_condensed_bold;
@@ -40,11 +44,12 @@ import static fr.autruche.slurpsV2.R.font.roboto_condensed_bold;
 public class Jeu extends AppCompatActivity {
     FirebaseDatabase mDatabase;
     private String selfID;
+
     LinearLayout linear1, linear2;
     TextView description, timer;
     static Button valider;
     ImageView reload;
-    Boolean defiDisplayed;
+    private boolean defiDisplayed;
     ScrollView scroll;
 
     CardView i12,i32;
@@ -54,7 +59,7 @@ public class Jeu extends AppCompatActivity {
 
     Intent timerDefi;
 
-
+    Defi defiEnCours;
 
     public static long TIME;
     private String TAG = "TIMER-TAG";
@@ -76,30 +81,10 @@ public class Jeu extends AppCompatActivity {
         setOnClickListenerReload();
         setOnClickListenerButton();
 
-
-
         //verif
         timerDefi  = new Intent(Jeu.this, BroadcastService.class);
         if(timerDefi != null)
             Log.i("LOOOOOOOOOOG","INITIALISATIOOOOOOOOOOOOOOOOOOOOON)");
-
-
-        //refresh affichage
-        refresh();
-
-    }
-
-    private void init()
-    {
-        mDatabase = FirebaseDatabase.getInstance();
-        linear1 = findViewById(R.id.linear1);
-        linear2 = findViewById(R.id.linear2);
-        description = findViewById(R.id.description);
-        timer = findViewById(R.id.timer);
-        valider = findViewById(R.id.valider);
-        reload = findViewById(R.id.reload);
-        scroll= findViewById(R.id.scroll);
-        selfID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         FirebaseDatabase.getInstance().getReference("parties/" + Menu.codePartie + "/acces").setValue(false);
         mDatabase.getReference("parties").child(Menu.codePartie).child("listJoueur").addChildEventListener(new ChildEventListener() {
@@ -139,7 +124,74 @@ public class Jeu extends AppCompatActivity {
             }
         });
 
+        Menu.arrayOfDefisActif.clear();
+        mDatabase.getReference("parties").child(Menu.codePartie).child("defisActif").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Defi defiRetrieve = snapshot.getValue(Defi.class);
+                defiRetrieve.setKey(Integer.parseInt(snapshot.getKey()));
+                Menu.arrayOfDefisActif.add(defiRetrieve);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                Defi defi = snapshot.getValue(Defi.class);
+                System.out.println("key: " + defi.getKey());
+
+                for(Defi d :Menu.arrayOfDefisActif){
+                    System.out.println("key: " + d.getKey()+ "    description: " + d.getDescription());}
+
+                Iterator<Defi> itr = Menu.arrayOfDefisActif.iterator();
+                while(itr.hasNext()){
+                    int key = itr.next().getKey();
+                    if (key == defi.getKey()){
+                        itr.remove();
+                        if(Menu.arrayOfDefisActif.size() == 0){
+                            setPartieFinie();
+                        }
+                    }
+                }
+                for(Defi d :Menu.arrayOfDefisActif){
+                    System.out.println("key: " + d.getKey()+ "    description: " + d.getDescription());}
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         setPasDeDefi();
+        //refresh affichage
+        refresh();
+
+    }
+
+    private void init()
+    {
+        mDatabase = FirebaseDatabase.getInstance();
+        linear1 = findViewById(R.id.linear1);
+        linear2 = findViewById(R.id.linear2);
+        description = findViewById(R.id.description);
+        timer = findViewById(R.id.timer);
+        valider = findViewById(R.id.valider);
+        reload = findViewById(R.id.reload);
+        scroll= findViewById(R.id.scroll);
+        selfID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        defiDisplayed = false;
+
+
     }
 
     @Override
@@ -175,7 +227,7 @@ public class Jeu extends AppCompatActivity {
         stopService(new Intent(this,BroadcastService.class));
         Log.i(TAG,"Stopped service");
         try{
-            mDatabase.getReference().child("parties").child(Menu.codePartie).child("listJoueur").child(selfID).setValue(null);
+            //mDatabase.getReference().child("parties").child(Menu.codePartie).child("listJoueur").child(selfID).setValue(null);
             finish();
         }catch (Exception e){
         }
@@ -198,16 +250,33 @@ public class Jeu extends AppCompatActivity {
     private void setOnClickListenerReload()
     {
         reload.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                if(defiDisplayed) {
-                    setPasDeDefi();
-                    stopTimer(timerDefi);
-                }
-                else
-                    setDefi("Niquer des mères");
 
+                //(Menu.arrayOfDefisActif.size() > 0 &&
+                if(defiDisplayed){
+                    if (Menu.arrayOfDefisActif.size() > 0) {
+                        setPasDeDefi();
+                        stopTimer(timerDefi);
+                    }else{
+                        setPartieFinie();
+                        stopTimer(timerDefi);
+                    }
+                    //}if(Menu.arrayOfDefisActif.size() == 0) {
+                    //setPartieFinie();
+                    //Menu.arrayOfDefisActif.size() > 0 &&
+                }else if(!defiDisplayed)
+                {
+                    if (Menu.arrayOfDefisActif.size() > 0){
+                        setDefi();
+                    }else{
+                        setPartieFinie();
+                        stopTimer(timerDefi);
+                    }
+                }
                 scroll.scrollTo( O,scroll.getTop());
+                //Toast.makeText(Jeu.this, Boolean.toString(defiDisplayed), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -217,7 +286,22 @@ public class Jeu extends AppCompatActivity {
         valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Jeu.this, "CE BOUTON FONCTIONNE NOM DE DIEU!!", Toast.LENGTH_LONG).show();
+                mDatabase.getReference("parties").child(Menu.codePartie).child("listJoueur").child(selfID).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        int ancienScore = snapshot.getValue(Integer.class);
+                        int newScore = ancienScore + defiEnCours.getNbPoints();
+                        mDatabase.getReference("parties").child(Menu.codePartie).child("listJoueur").child(selfID).setValue(newScore);
+                        stopTimer(timerDefi);
+                        setDefiReussi();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
             }
         });
     }
@@ -230,17 +314,39 @@ public class Jeu extends AppCompatActivity {
         defiDisplayed = false;
 
     }
-
-    private void setDefi(String pDescription)
+    private void setDefiReussi()
     {
-        valider.setEnabled(true);
+        description.setText("Défi réussi...Bravo! Rien ne t'empêche de boire en attendant le prochain !");
+        timer.setVisibility(View.GONE);
+        valider.setVisibility(View.GONE);
+        defiDisplayed = false;
 
-        description.setText(pDescription);
+    }
+    private void setPartieFinie()
+    {
+        description.setText("Partie terminé ! Bravo " + joueursListe.get(0).getPseudo() + " !");
+        timer.setVisibility(View.GONE);
+        valider.setVisibility(View.GONE);
+        //defiDisplayed = 0;
+    }
+
+    private void setDefi()
+    {
+        getDefiRandom();
+        valider.setEnabled(true);
+        defiDisplayed = true;
+        description.setText(defiEnCours.getDescription());
         timer.setVisibility(View.VISIBLE);
         valider.setVisibility(View.VISIBLE);
-        startTimer(10000);
+        startTimer(defiEnCours.getTemps()*60000);
+    }
 
-        defiDisplayed=true;
+    private void getDefiRandom(){
+        Random rand = new Random();
+        int index = rand.nextInt(Menu.arrayOfDefisActif.size());
+        defiEnCours = Menu.arrayOfDefisActif.get(index);
+        int key = defiEnCours.getKey();
+        mDatabase.getReference("parties").child(Menu.codePartie).child("defisActif").child(Integer.toString(key)).setValue(null);
     }
 
     private void refresh()
@@ -410,10 +516,11 @@ public class Jeu extends AppCompatActivity {
 
     public static void setDefiFini()
     {
-        valider.setEnabled(false);
-        valider.setBackgroundColor(0xA1DFCECE);
-        valider.setTextColor(Color.parseColor("#777777"));
-
+        try{
+            valider.setEnabled(false);
+            valider.setBackgroundColor(0xA1DFCECE);
+            valider.setTextColor(Color.parseColor("#777777"));
+        }catch (Exception e){}
     }
 
 

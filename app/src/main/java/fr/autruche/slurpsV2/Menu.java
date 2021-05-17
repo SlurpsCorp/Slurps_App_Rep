@@ -24,6 +24,9 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
     public static ArrayList<String> arrayOfPseudo  = new ArrayList();
     public static ArrayList<String> arrayOfJoueur = new ArrayList();
     public static ArrayList<Bitmap> arrayOfBitmap  = new ArrayList();
+    public static ArrayList<Defi> fullArrayOfDefis = new ArrayList();
+    public static ArrayList<Defi> arrayOfDefisActif = new ArrayList();
+    public static ArrayList<Integer> arrayOfIndex = new ArrayList();
     public static String codePartie;
 
     @Override

@@ -88,11 +88,11 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         px = metrics.widthPixels;
-        Toast.makeText(this, Integer.toString(px), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, Integer.toString(px), Toast.LENGTH_SHORT).show();
         coteImg = px/5;
         interImg = coteImg /4;
-        Toast.makeText(this, Integer.toString(coteImg), Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, Integer.toString(interImg), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, Integer.toString(coteImg), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, Integer.toString(interImg), Toast.LENGTH_SHORT).show();
 
 
         codePartie();
@@ -115,6 +115,53 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
                         Menu.arrayOfBitmap.clear();
                         finish();
                     }
+                    mDatabase.getReference("Defis").child("DefisRoot").addChildEventListener(new ChildEventListener() {
+                        @Override
+                        public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                            //Toast.makeText(getApplicationContext(), snapshot.getValue(Defi.class), Toast.LENGTH_SHORT).show();
+
+                            Defi defiRetrieve = snapshot.getValue(Defi.class);
+                            defiRetrieve.setKey(Integer.parseInt(snapshot.getKey()));
+                            Menu.fullArrayOfDefis.add(defiRetrieve);
+                            Menu.arrayOfDefisActif = Menu.fullArrayOfDefis;
+                            writeDefisActifOnFireBase();
+
+                            /* Pour un max de défis
+                            if(Menu.fullArrayOfDefis.size() < 10*Menu.arrayOfJoueur.size()){
+                                Menu.arrayOfDefisActif = Menu.fullArrayOfDefis;
+                                writeDefisActifOnFireBase();
+                            }else{
+                                Random rand = new Random();
+                                int indexRand = rand.nextInt(Menu.fullArrayOfDefis.size());
+                                for(int i = indexRand; i <= Menu.fullArrayOfDefis.size() ; i++){
+                                    Menu.arrayOfDefisActif.add(Menu.fullArrayOfDefis.get(i));
+                                }
+                                for(int i=0; i < 10*Menu.arrayOfJoueur.size()-indexRand; i++){
+                                    Menu.arrayOfDefisActif.add(Menu.fullArrayOfDefis.get(i));
+                                }
+                            }*/
+                        }
+
+                        @Override
+                        public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                        }
+
+                        @Override
+                        public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+                        }
+
+                        @Override
+                        public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                 }
 
                 @Override
@@ -138,14 +185,18 @@ public class CreationPartie extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    private void writeDefisActifOnFireBase(){
+        mDatabase.getReference("parties/"+ Menu.codePartie).child("defisActif").setValue(Menu.arrayOfDefisActif);
+    }
+
     private void validerPartie() {
 
         Integer TimePickerHour = timePickerHour.getValue();
         Integer TimePickerMinute = timePickerMinute.getValue();
 
         if(TimePickerMinute != 0 || TimePickerHour != 0 ){
-            FirebaseDatabase.getInstance().getReference("parties/"+ Menu.codePartie + "/heurePartie").setValue(TimePickerHour);
-            FirebaseDatabase.getInstance().getReference("parties/" + Menu.codePartie + "/minutePartie").setValue(TimePickerMinute);
+            mDatabase.getReference("parties/"+ Menu.codePartie + "/heurePartie").setValue(TimePickerHour);
+            mDatabase.getReference("parties/" + Menu.codePartie + "/minutePartie").setValue(TimePickerMinute);
 
             //Toast.makeText(CreationPartie.this,"⚠️ Partie lancée et maintenant injoignable !",Toast.LENGTH_LONG).show();
             Intent openJeu = new Intent(getApplicationContext(), Jeu.class);

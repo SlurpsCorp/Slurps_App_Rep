@@ -104,10 +104,6 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
 
     protected void onDestroy(){
         super.onDestroy();
-        try{
-            mDatabase.getReference().child("parties").child(Menu.codePartie).child("listJoueur").child(selfID).setValue(null);
-        }catch (Exception e){
-        }
     }
 
     @Override
@@ -131,10 +127,10 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
                         cardViewButton.setVisibility(View.GONE);
                         onPartie = true;
                     }
-                    if (acces == false && onPartie == false){
+                    else if(acces == false && onPartie == false){
                         Toast.makeText(RejoindrePartie.this,"😢 💩La partie a commencé sans vous! ",Toast.LENGTH_LONG).show();
                     }
-                    if (acces == false && onPartie == true){
+                    else if(acces == false && onPartie == true){
                         Intent openJeu = new Intent(getApplicationContext(), Jeu.class);
                         startActivity(openJeu);
                         finish();

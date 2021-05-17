@@ -125,45 +125,43 @@ MERGED from [androidx.core:core:1.3.1] C:\Users\atrin\.gradle\caches\transforms-
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\atrin\.gradle\caches\transforms-2\files-2.1\a577a4f2d9e6384dbceeb5e0ea30a993\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\atrin\.gradle\caches\transforms-2\files-2.1\a577a4f2d9e6384dbceeb5e0ea30a993\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 	android:requestLegacyExternalStorage
-		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:21:9-52
+		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:22:9-52
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.3.1] C:\Users\atrin\.gradle\caches\transforms-2\files-2.1\0fd693cbeda8be952cfd72e782f62993\core-1.3.1\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:23:9-35
+		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:24:9-35
 	android:label
-		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:20:9-41
+		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:21:9-41
 	android:roundIcon
-		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:22:9-54
+		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:23:9-54
+	android:largeHeap
+		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:18:9-33
 	android:icon
-		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:19:9-43
+		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:20:9-43
 	android:allowBackup
-		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:19:9-35
 	android:theme
-		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:24:9-44
+		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:25:9-44
 activity#fr.autruche.slurpsV2.ProfilsGrid
-ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:25:9-58
+ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:26:9-58
 	android:name
-		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:25:19-46
+		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:26:19-46
 activity#fr.autruche.slurpsV2.Profil
-ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:26:9-44
+ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:27:9-44
 	android:name
-		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:26:19-41
+		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:27:19-41
 activity#fr.autruche.slurpsV2.Menu
-ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:27:9-42
+ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:28:9-42
 	android:name
-		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:27:19-39
+		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:28:19-39
 activity#fr.autruche.slurpsV2.Jeu
-ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:28:9-41
+ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:29:9-41
 	android:name
-		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:28:19-38
+		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:29:19-38
 activity#fr.autruche.slurpsV2.RejoindrePartie
-ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:29:9-53
+ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:30:9-53
 	android:name
-		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:29:19-50
-activity#fr.autruche.slurpsV2.JoinOrCreate
-ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:30:9-50
-	android:name
-		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:30:19-47
+		ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:30:19-50
 activity#fr.autruche.slurpsV2.CreationPartie
 ADDED from C:\Users\atrin\AndroidStudioProjects\Slurps_App_elo\app\src\main\AndroidManifest.xml:31:9-52
 	android:name
