@@ -1,46 +1,49 @@
-package fr.autruche.slurpsV2;
+
+        package fr.autruche.slurpsV2;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.os.Bundle;
-import android.util.Log;
-import android.util.Patterns;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
+        import android.content.Context;
+        import android.content.Intent;
+        import android.content.SharedPreferences;
+        import android.graphics.Bitmap;
+        import android.graphics.BitmapFactory;
+        import android.graphics.drawable.BitmapDrawable;
+        import android.os.Bundle;
+        import android.util.Log;
+        import android.util.Patterns;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.EditText;
+        import android.widget.ImageView;
+        import android.widget.ProgressBar;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
+        import com.google.android.gms.tasks.OnCompleteListener;
+        import com.google.android.gms.tasks.OnSuccessListener;
+        import com.google.android.gms.tasks.Task;
+        import com.google.firebase.auth.AuthResult;
+        import com.google.firebase.auth.FirebaseAuth;
+        import com.google.firebase.database.DataSnapshot;
+        import com.google.firebase.database.DatabaseReference;
+        import com.google.firebase.database.FirebaseDatabase;
+        import com.google.firebase.storage.FirebaseStorage;
+        import com.google.firebase.storage.StorageReference;
 
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
+        import java.util.Random;
+        import java.util.concurrent.TimeUnit;
 
 public class Register extends AppCompatActivity implements View.OnClickListener{
 
     private FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
+    private FirebaseDatabase mDatabase;
     private EditText editTextEmail, editTextPassword, editTextPasswords2;
     private Button buttonRegister;
     private ProgressBar progressBar;
     private String pseudoDefault;
-
+    private SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +51,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_register);
 
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference("Users");
+        mDatabase = FirebaseDatabase.getInstance();
 
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
 
@@ -74,7 +77,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         String email = editTextEmail.getText().toString().trim();
         String passwd = editTextPassword.getText().toString().trim();
         String passwd2 = editTextPasswords2.getText().toString().trim();
-        String pseudo = retrievePseudo();
+        retrievePseudo();
 
         if(email.isEmpty()){
             editTextEmail.setError("⚠️ Email obligatoire!");
@@ -113,16 +116,24 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
                 if(task.isSuccessful()){
                     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                    User user = new User(pseudo, email);
-                    mDatabase.child(mAuth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    sp = getSharedPreferences("emailSaved", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sp.edit();
+
+                    editor.putString("email", email);
+                    editor.putString("password", passwd);
+                    editor.putBoolean("isChecked", true);
+                    editor.commit();
+
+                    User user = new User(pseudoDefault, email);
+                    mDatabase.getReference("Users").child(mAuth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
 
                                 //////////////////redirect play view /////////////////////
-                                Intent openPlay = new Intent(getApplicationContext(), SignIn.class);
+                                Intent signIn = new Intent(getApplicationContext(), SignIn.class);
                                 progressBar.setVisibility(View.GONE);
-                                startActivity(openPlay);
+                                startActivity(signIn);
                                 finish();
 
 
@@ -130,7 +141,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
                                 Toast.makeText(Register.this,"❌ Une erreur est survenue! Veuillez réessayer!ecrire database",Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
                             }
-
                         }
                     });
                     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -143,27 +153,26 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
 
     }
 
-    public String retrievePseudo(){
+    public void retrievePseudo(){
 
         Random rand = new Random();
         String pseudoNum = String.valueOf(rand.nextInt(478) + 1);
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("pseudoDefault");
+        DatabaseReference ref = mDatabase.getReference().child("pseudoDefault");
         ref.child(pseudoNum).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
                     Log.e("firebase", "Error getting data", task.getException());
-                    //Toast.makeText(Register.this,"❌AIE PAS DE PSEUDO",Toast.LENGTH_LONG).show();
                     pseudoDefault = "Crasseux";
-                    Toast.makeText(Register.this,"Pseudo: " + pseudoDefault,Toast.LENGTH_LONG).show();
+                    //Toast.makeText(Register.this,"Pseudo: " + pseudoDefault,Toast.LENGTH_LONG).show();
                 }else {
                     pseudoDefault = String.valueOf(task.getResult().getValue());
-                    Toast.makeText(Register.this,"Pseudo: " + pseudoDefault,Toast.LENGTH_LONG).show();
+                    Toast.makeText(Register.this,"Ton pseudo: " + pseudoDefault,Toast.LENGTH_LONG).show();
                 }
             }
         });
-
-        return pseudoDefault;
     }
 }
+
+

@@ -1,7 +1,17 @@
 package fr.autruche.slurpsV2;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,6 +22,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -19,12 +30,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -34,35 +49,65 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
 
     private EditText code1, code2, code3, code4;
     private EditText[] codes;
-    private String codePartie,joueurID ;
+    private String createurID;
+    private String selfID = FirebaseAuth.getInstance().getCurrentUser().getUid();
     private Button buttonAcceder;
     private GridLayout gridUser;
     private ImageView waitUser;
+    private FrameLayout frameImg;
     private ProgressBar progressBar;
-    private int cote;
+    private CardView cardViewButton;
+    private int px;
+    private int coteImg;
+    private int interImg;
+    private ConstraintLayout constraintL;
     private boolean acces;
+    private boolean onPartie = false;
 
-    private TextView textaaa;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rejoindre_partie);
 
-        textaaa = findViewById(R.id.textaaa);
-
         mDatabase = FirebaseDatabase.getInstance();
-        code1 = findViewById(R.id.code1);
-        code2 = findViewById(R.id.code2);
-        code3 = findViewById(R.id.code3);
-        code4 = findViewById(R.id.code4);
+
+        code1 = findViewById(R.id.codo1);
+        code2 = findViewById(R.id.codo2);
+        code3 = findViewById(R.id.codo3);
+        code4 = findViewById(R.id.codo4);
 
         buttonAcceder = findViewById(R.id.ButtonAcceder);
         buttonAcceder.setOnClickListener(this);
 
-        codePartie();
+        progressBar = (ProgressBar) findViewById(R.id.progressBar2);
+        progressBar.setVisibility(View.VISIBLE);
 
+        cardViewButton = findViewById(R.id.cardView);
+        frameImg = findViewById(R.id.frameLayout2);
+        gridUser = findViewById(R.id.GridLayout);
+        gridUser.setVisibility(View.INVISIBLE);
+        constraintL = findViewById(R.id.consti);
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        px = metrics.widthPixels;
+        coteImg = px/5;
+        interImg = coteImg /4;
+
+        codePartie();
         waitUserIcon();
+
+    }
+
+    protected void onDestroy(){
+        super.onDestroy();
+        try{
+            mDatabase.getReference().child("parties").child(Menu.codePartie).child("listJoueur").child(selfID).setValue(null);
+        }catch (Exception e){
+        }
     }
 
     @Override
@@ -70,46 +115,158 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
         accederPartie();
     }
 
-
-
-
     private void accederPartie() {
-        ArrayList<String> joueurIDlist = new ArrayList<>();
-        joueurID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        codePartie = code1.getText().toString().trim() + code2.getText().toString().trim() + code3.getText().toString().trim() + code4.getText().toString().trim();
+        Menu.codePartie = code1.getText().toString().trim() + code2.getText().toString().trim() + code3.getText().toString().trim() + code4.getText().toString().trim();
 
 
-        if (isAccessible(codePartie) == true){
-
-            joueurIDlist.add(1, joueurID);
-            mDatabase.getReference("parties/" + codePartie + "joueurIDList").setValue(joueurIDlist);
-            mDatabase.getReference("parties/" + codePartie).child("joueurIDList").addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                        joueurIDlist.add(snapshot.getValue().toString());
-                        textaaa.setText(textaaa + "\n" + snapshot.getValue().toString());
-
-                        // trouver chemain photo avec user et afficher pdp storage
+        mDatabase.getReference().child("parties").child(Menu.codePartie).child("acces").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                acces = snapshot.getValue(boolean.class);
+                if(acces == true || acces == false){
+                    if (acces == true && onPartie == false){
+                        ajout_de_joueur();
+                        gridUser.setVisibility(View.VISIBLE);
+                        buttonAcceder.setVisibility(View.GONE);
+                        cardViewButton.setVisibility(View.GONE);
+                        onPartie = true;
                     }
+                    if (acces == false && onPartie == false){
+                        Toast.makeText(RejoindrePartie.this,"😢 💩La partie a commencé sans vous! ",Toast.LENGTH_LONG).show();
+                    }
+                    if (acces == false && onPartie == true){
+                        Intent openJeu = new Intent(getApplicationContext(), Jeu.class);
+                        startActivity(openJeu);
+                        finish();
+                    }
+                }else{
+                    Toast.makeText(RejoindrePartie.this, "Cette partie n'existe pas !", Toast.LENGTH_SHORT).show();
                 }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    //Log.w("firebase", "loadPost:onCancelled", DatabaseError.toException());
-                }
-            });
+            }
 
-        }else{
-            Toast.makeText(RejoindrePartie.this,"😢 💩La partie a commencé sans vous! ",Toast.LENGTH_LONG).show();
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+
+    private void ajout_de_joueur() {
+        mDatabase.getReference("parties").child(Menu.codePartie).child("listJoueur").child(selfID).setValue(0);
+        mDatabase.getReference("parties").child(Menu.codePartie).child("listJoueur").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                Menu.arrayOfJoueur.add(snapshot.getKey());
+                retrieveBitmapInArray(snapshot.getKey());
+                retrievePseudoInArray(snapshot.getKey());
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+
+                try{
+
+                    int position = Menu.arrayOfJoueur.indexOf(snapshot.getKey());
+                    //System.out.println(arrayOfJoueur);
+                    Menu.arrayOfBitmap.remove(position);
+                    Menu.arrayOfJoueur.remove(position);
+                    Menu.arrayOfPseudo.remove(position);
+                    //System.out.println(arrayOfJoueur);
+                    refreshImageGrid();
+
+                }catch (Exception e){}
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void retrievePseudoInArray(String userId){
+        mDatabase.getReference("Users").child(userId).child("pseudo").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Menu.arrayOfPseudo.add(snapshot.getValue(String.class));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+    public void retrieveBitmapInArray(String userId){
+        mDatabase.getReference("Users").child(userId).child("pdp").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                FirebaseStorage storage = FirebaseStorage.getInstance();
+                StorageReference pdpRef = storage.getReference().child(snapshot.getValue(String.class));
+                pdpRef.getBytes(1024*1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                    @Override
+                    public void onSuccess(byte[] bytes) {
+                        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0 , bytes.length);
+                        Menu.arrayOfBitmap.add(Bitmap.createScaledBitmap(bitmap, coteImg, coteImg, false));
+                        refreshImageGrid();
+                    }
+                });
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+
+    public void refreshImageGrid() {
+
+        try{
+            gridUser.removeViews(1, gridUser.getChildCount()-1);
+        }catch(Exception e){}
+
+
+        for (Bitmap bitmap : Menu.arrayOfBitmap){
+            //creation FrameLayout
+            FrameLayout fm = new FrameLayout(gridUser.getContext());
+            fm.setPadding(interImg,interImg,interImg,interImg);
+
+            //creation Cardview
+            CardView cd = new CardView(fm.getContext());
+            cd.setRadius(500);
+
+            // chemin image
+            ImageView v = new ImageView(cd.getContext());
+
+
+            v.setImageBitmap(bitmap);
+            v.setAdjustViewBounds(true);
+
+            v.setMinimumWidth(coteImg);
+            v.setMinimumHeight(coteImg);
+
+            cd.addView(v);
+            fm.addView(cd);
+
+            gridUser.addView(fm);
         }
     }
 
     public void codePartie(){
-        code1 =  findViewById(R.id.code1);
-        code2 =  findViewById(R.id.code2);
-        code3 =  findViewById(R.id.code3);
-        code4 =  findViewById(R.id.code4);
         codes = new EditText[]{code1, code2, code3, code4};
 
         code1.addTextChangedListener(new PinTextWatcher(0));
@@ -121,44 +278,33 @@ public class RejoindrePartie extends AppCompatActivity implements View.OnClickLi
         code2.setOnKeyListener(new PinOnKeyListener(1));
         code3.setOnKeyListener(new PinOnKeyListener(2));
         code4.setOnKeyListener(new PinOnKeyListener(3));
+    }
+
+    private void waitUserIcon(){
+
+        FrameLayout fm = new FrameLayout(gridUser.getContext());
+        fm.setPadding(interImg,interImg,interImg,interImg);
+
+        //creation Cardview
+        CardView cd = new CardView(fm.getContext());
+        cd.setRadius(500);
+
+        // chemin image
+        ImageView v = new ImageView(cd.getContext());
 
 
+        v.setImageDrawable(Drawable.createFromPath("@drawable/ic_userwaiting"));
+        v.setAdjustViewBounds(true);
+        v.setMinimumWidth(coteImg);
+        v.setMinimumHeight(coteImg);
+
+        cd.addView(v);
+        fm.addView(cd);
+
+        constraintL.addView(fm,0);
 
     }
 
-    private void waitUserIcon() {
-        gridUser = (GridLayout) findViewById(R.id.GridLayout);
-
-        waitUser = (ImageView)  findViewById(R.id.waitUser);
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        int px = metrics.widthPixels;
-
-        cote = px / 5;
-        waitUser.setAdjustViewBounds(true);
-        waitUser.setMaxHeight(cote);
-        waitUser.setMaxWidth(cote);
-    }
-
-    private boolean isAccessible(String code){
-
-        mDatabase.getReference().child("parties").child(code).child("acces").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    Log.e("firebase", "Error getting data", task.getException());
-                    acces = false;
-                    Toast.makeText(RejoindrePartie.this,"❌ Partie introuvable! ",Toast.LENGTH_LONG).show();
-                }else {
-                   if (task.getResult().getValue() == "true"){
-                       acces = true;
-                   }else{
-                       acces = false;}
-                }
-            }
-        });
-        return acces;
-    }
 
     public class PinTextWatcher implements TextWatcher {
 

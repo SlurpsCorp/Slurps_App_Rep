@@ -11,14 +11,13 @@
     <uses-permission android:name="android.permission.CAMERA2" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 
     <uses-feature
         android:name="android.hardware.camera2"
         android:required="true" />
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
-    <uses-feature android:name="android.hardware.location.gps" />
-
+    <uses-permission android:name="android.permission.CAMERA2" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -33,6 +32,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Slurps" >
+        <activity android:name="fr.autruche.slurpsV2.ProfilsGrid" />
+        <activity android:name="fr.autruche.slurpsV2.Profil" />
+        <activity android:name="fr.autruche.slurpsV2.Menu" />
+        <activity android:name="fr.autruche.slurpsV2.Jeu" />
         <activity android:name="fr.autruche.slurpsV2.RejoindrePartie" />
         <activity android:name="fr.autruche.slurpsV2.JoinOrCreate" />
         <activity android:name="fr.autruche.slurpsV2.CreationPartie" />
@@ -65,6 +68,8 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <service android:name="fr.autruche.slurpsV2.BroadcastService" />
 
         <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
