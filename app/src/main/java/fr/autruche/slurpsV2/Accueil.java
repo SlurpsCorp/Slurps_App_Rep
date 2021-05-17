@@ -29,9 +29,9 @@ public class Accueil extends AppCompatActivity implements View.OnClickListener{
         textViewConnexion.setOnClickListener(this);
 
         ActivityCompat.requestPermissions(Accueil.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-        ActivityCompat.requestPermissions(Accueil.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
-        ActivityCompat.requestPermissions(Accueil.this,new String[]{Manifest.permission.MANAGE_EXTERNAL_STORAGE},1);
-        ActivityCompat.requestPermissions(Accueil.this,new String[]{"Manifest.permission.CAMERA2"},1);
+        ActivityCompat.requestPermissions(Accueil.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},2);
+        ActivityCompat.requestPermissions(Accueil.this,new String[]{Manifest.permission.MANAGE_EXTERNAL_STORAGE},3);
+        ActivityCompat.requestPermissions(Accueil.this,new String[]{"Manifest.permission.CAMERA2"},4);
 
     }
 

@@ -12,6 +12,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -31,6 +32,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Random;
 
 
 public class ProfilsGrid extends AppCompatActivity {
@@ -39,8 +41,7 @@ public class ProfilsGrid extends AppCompatActivity {
     private ImageView addCircle;
     private int c;
     private static final int REQUEST_IMAGE_CAPTURE = 101;
-
-
+    private static boolean FIRST_CONNECTION = true;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -73,15 +74,26 @@ public class ProfilsGrid extends AppCompatActivity {
 
         //debug = findViewById(R.id.DEBUG);
 
+        //Files.exists(Paths.get("historyImage"))
 
-        if(Files.exists(Paths.get("historyImage")))
+
+        //Ces 2 try servent à savoir si c'est la première fois que l'utilisateur ouvre cette activité, NE PAS CHANGER
+        try
+        {
+            read();
+            FIRST_CONNECTION = false;
+        }catch(Exception e)
+        {
+            FIRST_CONNECTION = true;
+        }
+
+        if(FIRST_CONNECTION)
         {
             try {
                 write("");
+                FIRST_CONNECTION = false;
             }
-            catch (Exception e){
-                e.printStackTrace();
-            }
+            catch (Exception e) { e.printStackTrace();}
         }
 
 
@@ -103,6 +115,9 @@ public class ProfilsGrid extends AppCompatActivity {
         //creation Cardview
         CardView cd = new CardView(fm.getContext());
         cd.setRadius(500);
+        cd.setMinimumHeight(c);
+        cd.setMinimumWidth(c);
+
 
         // chemin image
         ImageView v = new ImageView(cd.getContext());
@@ -121,12 +136,16 @@ public class ProfilsGrid extends AppCompatActivity {
             finalBitmap = Bitmap.createBitmap(bitmap,0 , (bitmap.getHeight()-value)/2, value, value);
         }
 
-
-
         v.setImageBitmap(finalBitmap);
         v.setAdjustViewBounds(true);
         v.setMaxHeight(c);
         v.setMaxWidth(c);
+        v.setMinimumHeight(c);
+        v.setMinimumWidth(c);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            v.setForegroundGravity(Gravity.CENTER);
+        }
+        ;
 
         chooseImageProfilOnclick(v);
 
@@ -137,7 +156,6 @@ public class ProfilsGrid extends AppCompatActivity {
 
     public void chooseImageProfilOnclick(final ImageView photoIV)
     {
-
         photoIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,8 +164,6 @@ public class ProfilsGrid extends AppCompatActivity {
 
             }
         });
-
-
 
     }
 
@@ -189,14 +205,15 @@ public class ProfilsGrid extends AppCompatActivity {
         }
     }
 
-    private void saveToGalleryBitmap(Bitmap bitmap){
+    private void saveToGalleryBitmap(Bitmap bitmap, String nameFile){
 
         FileOutputStream outputStream=null;
         java.io.File file = Environment.getExternalStorageDirectory();
-        java.io.File dir = new java.io.File(file.getAbsolutePath() + "/ASlurps2");
+        String path = file.getAbsolutePath() + "/ASlurps2";
+        java.io.File dir = new java.io.File(path);
         dir.mkdirs();
 
-        String filename = "ProfileImage.png";
+        String filename = nameFile + ".png";
 
         java.io.File outFile = new java.io.File(dir, filename);
 
@@ -223,6 +240,32 @@ public class ProfilsGrid extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
+
+        try {
+            write(path+"\n"+read());
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
+
+    }
+
+    private String getRandomName()
+    {
+        StringBuilder name = new StringBuilder();
+        for(int i = 0; i<5; i++)
+        {
+            name.append(randomChar()).toString();
+        }
+        Toast.makeText(this, name.toString(), Toast.LENGTH_SHORT).show();
+        return name.toString();
+    }
+
+    public String randomChar(){
+        Random rand = new Random();
+        char c = (char)(rand.nextInt(26) + 65);
+        String myStr = Character.toString(c);
+        return myStr;
     }
 
 
@@ -294,11 +337,13 @@ public class ProfilsGrid extends AppCompatActivity {
             public void onClick(View v) {
                 BottomSheetDialog dialog = new BottomSheetDialog(ProfilsGrid.this);
                 View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_dialog,(LinearLayout)findViewById(R.id.linearDialog));
+
                 bottomSheetView.findViewById(R.id.PhotoBtn).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         openAppareilPhoto();
                         dialog.dismiss();
+                        Toast.makeText(ProfilsGrid.this, "1", Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -307,8 +352,10 @@ public class ProfilsGrid extends AppCompatActivity {
                     public void onClick(View v) {
                         openLibrairie();
                         dialog.dismiss();
+                        Toast.makeText(ProfilsGrid.this, "2", Toast.LENGTH_SHORT).show();
                     }
                 });
+
                 dialog.setContentView(bottomSheetView);
                 dialog.show();
             }
@@ -332,7 +379,7 @@ public class ProfilsGrid extends AppCompatActivity {
     {
         super.onActivityResult(requestCode, resultCode, data);
         //verifie si une image est récupérée
-        if (requestCode == 1 && resultCode == RESULT_OK)
+        if (requestCode ==  1 && resultCode == RESULT_OK)
         {
             //accès à l'image à partir de data
             Uri selectedImage = data.getData();
@@ -352,18 +399,47 @@ public class ProfilsGrid extends AppCompatActivity {
 
             //Ecrire path dans fichier
             try {
+                Toast.makeText(ProfilsGrid.this, imgPath, Toast.LENGTH_SHORT).show();
                 write(imgPath+"\n"+read());
             }catch(IOException e){
                 e.printStackTrace();
             }
 
+            refresh();
         }
+
         if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            saveToGalleryBitmap(imageBitmap);
+            Bitmap bitmap = (Bitmap) extras.get("data");
+
+
+
+            Bitmap finalBitmap = bitmap; // bitmap final qui sera carré
+            int value = 0;
+            if (bitmap.getHeight() <= bitmap.getWidth()) {
+                value = bitmap.getHeight();
+                finalBitmap = Bitmap.createBitmap(bitmap,(bitmap.getWidth()-value)/2 , 0, value, value);
+            } else {
+                value = bitmap.getWidth();
+                finalBitmap = Bitmap.createBitmap(bitmap,0 , (bitmap.getHeight()-value)/2, value, value);
+            }
+
+            //on enregistre sur le téléphone dans ASlurps2
+
+            java.io.File file = Environment.getExternalStorageDirectory();
+            String path = file.getAbsolutePath() + "/ASlurps2";
+
+            String rdmName = getRandomName();
+            saveToGalleryBitmap(finalBitmap, rdmName );
+
+            try {
+                write(path +"/"+ rdmName+".png\n"+read());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            refresh();
         }
-        refresh();
+
     }
 
 

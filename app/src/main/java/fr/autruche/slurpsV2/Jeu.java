@@ -24,7 +24,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Locale;
+import java.util.Random;
+
 import static android.os.Build.VERSION_CODES.O;
 import static android.view.ViewGroup.*;
 import static fr.autruche.slurpsV2.R.font.roboto_condensed_bold;
@@ -45,7 +48,7 @@ public class Jeu extends AppCompatActivity {
 
     Intent timerDefi;
 
-
+    ArrayList<UserForScore> ParticpantsDejaAppelees = new ArrayList<>();
 
     public static long TIME;
     private String TAG = "TIMER-TAG";
@@ -70,7 +73,7 @@ public class Jeu extends AppCompatActivity {
 
         for(int i=0; i< 10; i++)
         {
-            joueursListe.add(new UserForScore(i));
+            joueursListe.add(new UserForScore("Alex"+i, i));
         }
 
 
@@ -95,7 +98,7 @@ public class Jeu extends AppCompatActivity {
         reload = findViewById(R.id.reload);
         scroll= findViewById(R.id.scroll);
 
-        setPasDeDefi();
+        //setPasDeDefi();
     }
 
     @Override
@@ -153,11 +156,11 @@ public class Jeu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(defiDisplayed) {
-                    setPasDeDefi();
+                    //setPasDeDefi();
                     stopTimer(timerDefi);
                 }
                 else
-                    setDefi("Niquer des mères");
+                    setDefi(new Defi("test @0",5,1,1));
 
             scroll.scrollTo( O,scroll.getTop());
             }
@@ -174,25 +177,28 @@ public class Jeu extends AppCompatActivity {
         });
     }
 
+    /*
     private void setPasDeDefi()
-    {
         description.setText("Pas de défi pour le moment! Rien ne t'empêche de boire en attendant ;)");
         timer.setVisibility(View.GONE);
         valider.setVisibility(View.GONE);
         defiDisplayed = false;
 
-    }
+    }*/
 
-    private void setDefi(String pDescription)
+    private void setDefi(Defi defi)
     {
         valider.setEnabled(true);
 
-        description.setText(pDescription);
+
+        description.setText(formaterDefi(defi));
+
+
         timer.setVisibility(View.VISIBLE);
         valider.setVisibility(View.VISIBLE);
-        startTimer(10000);
-
+        startTimer(defi.getTempsMin()*60000);
         defiDisplayed=true;
+
     }
 
     private void refresh()
@@ -415,6 +421,59 @@ public class Jeu extends AppCompatActivity {
             sharedPreferences.edit().putLong("time",millisUntilFinished).apply();
         }
     }
+
+
+    /*
+    ----------------------------------------------------------------------------------------------
+    CETTE PARTIE EST DEDIEE AUX DEFI (sauf pour set setDefi qui est au debut de la classe)
+    ----------------------------------------------------------------------------------------------
+     */
+    // A modifier en allant chercher sur Firebase
+    public Defi getRandomDefi()
+    {
+
+        Defi test ;
+
+        //si test n'est pas dans les defi déja fais
+            test = new Defi("Niquer des mères.",3,0,1);
+
+        return test;
+    }
+
+
+    private String formaterDefi(Defi defi)
+    {
+        String description = defi.getDescription();
+        int nbParticipants = defi.getNbPersonnes();
+
+
+
+        for(int i=0; i < nbParticipants; i++)
+        {
+            boolean isAlreadyChosen = true;
+            UserForScore JoueurAppele;
+            while(isAlreadyChosen && nbParticipants <= joueursListe.size()) {
+                Random rand = new Random();
+                int indice = rand.nextInt(joueursListe.size());
+                JoueurAppele = joueursListe.get(indice);
+
+
+                if (!ParticpantsDejaAppelees.contains(JoueurAppele))
+                    ParticpantsDejaAppelees.add(JoueurAppele);
+                    isAlreadyChosen = false;
+            }
+
+            String aChanger = "@".concat(String.valueOf(i));
+            description = description.replaceAll(aChanger,joueursListe.get(i).getPseudo());
+        }
+        //Toast.makeText(this, description, Toast.LENGTH_SHORT).show();
+        return description;
+    }
+
+
+
+
+
 
 
 }

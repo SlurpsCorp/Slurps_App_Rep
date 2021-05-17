@@ -6,9 +6,9 @@ public class UserForScore {
     private String pseudo;
     private int points;
 
-    public UserForScore(int s) {
+    public UserForScore(String nom, int s) {
         pdp = R.drawable.fatima;
-        this.pseudo = "aLEX";
+        this.pseudo = nom;
         this.points = s;
     }
 

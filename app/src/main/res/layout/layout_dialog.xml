@@ -3,14 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/linearDialog"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="20dp">
 
     <Button
         android:id="@+id/PhotoBtn"
-        android:layout_width="220dp"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/roboto_condensed_bold"
@@ -21,7 +21,7 @@
 
     <Button
         android:id="@+id/BibliothequeBtn"
-        android:layout_width="220dp"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_below="@+id/PhotoBtn"
         android:background="#FFFFFF"
