@@ -4,8 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.res.ResourcesCompat;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +19,8 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.media.RingtoneManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -43,7 +50,7 @@ import static fr.autruche.slurpsV2.R.font.roboto_condensed_bold;
 
 public class Jeu extends AppCompatActivity {
     FirebaseDatabase mDatabase;
-    private String selfID;
+    public static String selfID;
 
     LinearLayout linear1, linear2;
     TextView description, timer;
@@ -59,7 +66,7 @@ public class Jeu extends AppCompatActivity {
 
     Intent timerDefi;
 
-    Defi defiEnCours;
+    public static Defi defiEnCours;
 
     public static long TIME;
     private String TAG = "TIMER-TAG";
@@ -76,6 +83,14 @@ public class Jeu extends AppCompatActivity {
         //initialisation des composants du layout
         init();
         initItemsForParams();
+
+        //init notif
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            NotificationChannel channel = new NotificationChannel("my notif", "my notif", NotificationManager.IMPORTANCE_HIGH);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
 
         //initialisation des onClickListeners
         setOnClickListenerReload();
@@ -172,12 +187,53 @@ public class Jeu extends AppCompatActivity {
             }
         });
 
+        mDatabase.getReference("parties").child(Menu.codePartie).child("receiveNotif").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                try {
+                    if (snapshot.getValue(boolean.class)) {
+                        mDatabase.getReference("parties").child(Menu.codePartie).child("notif").addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                Notif notifReceived = snapshot.getValue(Notif.class);
+                                if (notifReceived.isDone()) {
+                                    String message = Menu.arrayOfPseudo.get(Menu.arrayOfJoueur.indexOf(Jeu.selfID)) + " a réussi ce défis : " + notifReceived.getDescription() + "... Il peut distribuer " + notifReceived.getNbGorge() + " gorgées !";
+                                    sendNotif(Menu.arrayOfPseudo.get(Menu.arrayOfJoueur.indexOf(Jeu.selfID)) + " a réussi sont défis !", message);
+                                } else {
+                                    String message = Menu.arrayOfPseudo.get(Menu.arrayOfJoueur.indexOf(Jeu.selfID)) + " n'a pas réussi ce défis : " + notifReceived.getDescription() + "... Il doit boire " + notifReceived.getNbGorge() + " gorgées !";
+                                    sendNotif(Menu.arrayOfPseudo.get(Menu.arrayOfJoueur.indexOf(Jeu.selfID)) + " n'a pas réussi sont défis !", message);
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+                    }
+                }catch (Exception e){}
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         setPasDeDefi();
         //refresh affichage
         refresh();
 
     }
-
+    private void sendNotif(String titre, String message){
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), "my notif")
+                .setSmallIcon(R.drawable.ic_glass) //https://stackoverflow.com/questions/30795431/android-push-notifications-icon-not-displaying-in-notification-white-square-sh
+                .setContentTitle(titre)
+                .setContentText(message).setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
+        notificationManager.notify(1,builder.build());
+    }
     private void init()
     {
         mDatabase = FirebaseDatabase.getInstance();
@@ -292,6 +348,11 @@ public class Jeu extends AppCompatActivity {
                         int ancienScore = snapshot.getValue(Integer.class);
                         int newScore = ancienScore + defiEnCours.getNbPoints();
                         mDatabase.getReference("parties").child(Menu.codePartie).child("listJoueur").child(selfID).setValue(newScore);
+
+                        Notif notif = new Notif(selfID,defiEnCours.getDescription(),defiEnCours.getNbPoints()*3);
+                        notif.setDone(true);
+                        mDatabase.getReference("parties").child(Menu.codePartie).child("notif").setValue(notif);
+                        mDatabase.getReference("parties").child(Menu.codePartie).child("receiveNotif").setValue(true);
                         stopTimer(timerDefi);
                         setDefiReussi();
                     }

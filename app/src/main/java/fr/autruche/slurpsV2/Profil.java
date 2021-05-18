@@ -49,6 +49,10 @@ public class Profil extends AppCompatActivity {
         this.photoProfil = (ImageView) findViewById(R.id.photoProfil);
         this.SaveBtn = (Button) findViewById(R.id.SaveBtn);
 
+        SharedPreferences sp = getApplicationContext().getSharedPreferences("emailSaved", Context.MODE_PRIVATE);
+
+        pseudoProfil.setText(sp.getString("pseudo",""));
+
 
         SaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override

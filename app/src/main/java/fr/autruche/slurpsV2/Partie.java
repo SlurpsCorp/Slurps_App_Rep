@@ -6,8 +6,9 @@ import java.util.Date;
 
 public class Partie {
 
-    private String codePartie;
 
+    private String codePartie;
+    private boolean receiveNotif = false;
     private int heurePartie = 0;
     private int minutePartie = 0;
     private String createurID;
@@ -36,7 +37,9 @@ public class Partie {
         this.heurePartie = heurePartie;
         this.minutePartie = minutePartie;
     }
-
+    public boolean isReceiveNotif() {
+        return receiveNotif;
+    }
     public boolean isAcces() {
         return acces;
     }

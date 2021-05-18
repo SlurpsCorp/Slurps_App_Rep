@@ -16,11 +16,14 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 public class BroadcastService extends Service {
     final private String TAG = "BroadcastService";
     public static final String COUNTDOWN_BR = "com.example.backgoundtimercount";
     Intent intent = new Intent(COUNTDOWN_BR);
     CountDownTimer countDownTimer = null;
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
 
     SharedPreferences sharedPreferences;
     @Override
@@ -48,7 +51,10 @@ public class BroadcastService extends Service {
 
             @Override
             public void onFinish() {
+                Notif notif = new Notif(Menu.arrayOfPseudo.get(Menu.arrayOfJoueur.indexOf(Jeu.selfID)),Jeu.defiEnCours.getDescription(),Jeu.defiEnCours.getNbPoints()*3);
                 sendNotif("TEMPS ÉCOULÉ ⏳","Le temps t'a rattrapé connard ! 🖕");
+                mDatabase.getReference("parties").child(Menu.codePartie).child("notif").setValue(notif);
+                mDatabase.getReference("parties").child(Menu.codePartie).child("receiveNotif").setValue(true);
                 Jeu.setDefiFini();
                 stopSelf();
 

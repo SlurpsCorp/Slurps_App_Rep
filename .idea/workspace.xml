@@ -45,80 +45,53 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/CreationPartie$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/CreationPartie$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/CreationPartie$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/CreationPartie$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/CreationPartie$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/CreationPartie$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/CreationPartie$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/CreationPartie$4$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/CreationPartie$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/CreationPartie$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/CreationPartie.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/CreationPartie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Defi.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Defi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/BroadcastService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/BroadcastService$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/BroadcastService.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/BroadcastService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Jeu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Jeu$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Jeu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Jeu$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Jeu$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Jeu$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Jeu$4$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Jeu$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Jeu$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Jeu$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Jeu$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Jeu.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Jeu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/JoinOrCreate$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/JoinOrCreate$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/JoinOrCreate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Menu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Menu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Menu$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Menu$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Menu$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie$4$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie$PinOnKeyListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie$PinOnKeyListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie$PinTextWatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie$PinTextWatcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/RejoindrePartie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/out/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/out/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Partie.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Partie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Profil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Profil$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Profil$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Profil$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Profil$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Profil$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Profil.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/Profil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/SignIn$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/SignIn$1$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/SignIn$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/SignIn$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/SignIn$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/SignIn$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/SignIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/fr/autruche/slurpsV2/SignIn.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/CreationPartie$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/CreationPartie$1.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/CreationPartie$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/CreationPartie$2.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/CreationPartie$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/CreationPartie$3.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/CreationPartie$4$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/CreationPartie$4$1.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/CreationPartie$4.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/CreationPartie$4.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/CreationPartie.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/CreationPartie.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Defi.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Defi.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/BroadcastService$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/BroadcastService$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/BroadcastService.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/BroadcastService.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Jeu$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Jeu$1.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Jeu$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Jeu$2.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Jeu$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Jeu$3.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Jeu$4$1.dex" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Jeu$4.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Jeu$4.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Jeu$5.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Jeu$5.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Jeu.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Jeu.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/JoinOrCreate$1.dex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/JoinOrCreate$2.dex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/JoinOrCreate.dex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Menu$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Menu$1.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Menu$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Menu$2.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Menu$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Menu$3.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Menu.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Menu.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie$1.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie$2.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie$3.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie$4$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie$4$1.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie$4.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie$4.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie$PinOnKeyListener.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie$PinOnKeyListener.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie$PinTextWatcher.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie$PinTextWatcher.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/RejoindrePartie.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Partie.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Partie.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Profil$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Profil$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Profil$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Profil$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Profil$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Profil$3.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Profil.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/Profil.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/SignIn$1$1$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/SignIn$1$1$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/SignIn$1$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/SignIn$1$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/SignIn$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/SignIn$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/SignIn.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/fr/autruche/slurpsV2/SignIn.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/CreationPartie.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/CreationPartie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/Defi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/Defi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/BroadcastService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/BroadcastService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/Jeu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/JoinOrCreate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/RejoindrePartie.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/RejoindrePartie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/Notif.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/Notif.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/Partie.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/Partie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/Profil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/Profil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/autruche/slurpsV2/SignIn.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,8 +154,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="c23adb15" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-05-17T09:40:14.308Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="39V4C20108030406" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-05-17T11:43:48.704Z" />
     <property name="ResourceManagerPrefKey.ResourceType" value="DRAWABLE" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -374,10 +347,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="439" y="283" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960@0.0.1500.960" timestamp="1620867930710" />
-    <state x="556" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1621226627462">
+    <state x="556" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1621251689983">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="556" y="197" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1621226627462" />
+    <state x="556" y="197" key="#com.intellij.ide.util.MemberChooser/0.0.1500.960@0.0.1500.960" timestamp="1621251689983" />
     <state x="426" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1621220358570">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -402,22 +375,22 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="531" y="236" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1621174086521" />
-    <state width="1455" height="322" key="GridCell.Tab.0.bottom" timestamp="1621244419206">
+    <state width="1455" height="322" key="GridCell.Tab.0.bottom" timestamp="1621253998179">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1455" height="322" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1621244419206" />
-    <state width="1455" height="322" key="GridCell.Tab.0.center" timestamp="1621244419206">
+    <state width="1455" height="322" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1621253998179" />
+    <state width="1455" height="322" key="GridCell.Tab.0.center" timestamp="1621253998179">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1455" height="322" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1621244419206" />
-    <state width="1455" height="322" key="GridCell.Tab.0.left" timestamp="1621244419206">
+    <state width="1455" height="322" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1621253998179" />
+    <state width="1455" height="322" key="GridCell.Tab.0.left" timestamp="1621253998179">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1455" height="322" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1621244419206" />
-    <state width="1455" height="322" key="GridCell.Tab.0.right" timestamp="1621244419206">
+    <state width="1455" height="322" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1621253998179" />
+    <state width="1455" height="322" key="GridCell.Tab.0.right" timestamp="1621253998179">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1455" height="322" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1621244419206" />
+    <state width="1455" height="322" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1621253998179" />
     <state x="252" y="126" key="SettingsEditor" timestamp="1621179165103">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -442,9 +415,9 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="498" y="194" key="git4idea.branch.GitSmartOperationDialog/0.0.1500.960@0.0.1500.960" timestamp="1621124721176" />
-    <state x="406" y="219" key="run.anything.popup" timestamp="1621228012351">
+    <state x="405" y="218" key="run.anything.popup" timestamp="1621252249234">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="406" y="219" key="run.anything.popup/0.0.1500.960@0.0.1500.960" timestamp="1621228012351" />
+    <state x="405" y="218" key="run.anything.popup/0.0.1500.960@0.0.1500.960" timestamp="1621252249234" />
   </component>
 </project>

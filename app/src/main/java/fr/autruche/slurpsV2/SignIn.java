@@ -147,10 +147,28 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
                                 public void onSuccess(byte[] bytes) {
                                     Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0 , bytes.length);
                                     saveToGalleryBitmap(bitmap);
-                                    Intent openPlay = new Intent(getApplicationContext(), Menu.class);
-                                    progressBar.setVisibility(View.GONE);
-                                    startActivity(openPlay);
-                                    finish();
+                                    mDatabase.getReference("Users").child(selfID).child("pseudo").addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            String pseudoRetrieve = snapshot.getValue(String.class);
+
+                                            SharedPreferences sp = getSharedPreferences("ProfilDico",MODE_PRIVATE);
+                                            SharedPreferences.Editor editor = sp.edit();
+                                            editor.putString("pseudo",pseudoRetrieve);
+                                            editor.commit();
+
+                                            Intent openPlay = new Intent(getApplicationContext(), Menu.class);
+                                            progressBar.setVisibility(View.GONE);
+                                            startActivity(openPlay);
+                                            finish();
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
+
                                 }
                             });
                         }
